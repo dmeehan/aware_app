@@ -6,7 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9">
 <link href="css/Zoo.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<script src="js/navigation.js"></script>
+<script src="js/ui/navigation.js"></script>
+<script src="js/jquery-2.1.1.min.js"></script>
 </head>
 <body>
     <header class="navigation" role="banner">
@@ -16,8 +17,17 @@
             <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
             <nav role="navigation">
                 <ul id="js-navigation-menu" class="navigation-menu show">
-                    <li class="nav-item"><a href="analysis.html"><i class="fa fa-area-chart"></i> Analysis</a></li>
-                    <li class="nav-item"><a href="tools.html"><i class="fa fa-pencil-square-o"></i> Tools</a></li>
+                    <li class="nav-item more"><a href="#"><i class="fa fa-area-chart"></i> Analysis</a>
+                        <ul class="submenu">
+                          <li><a href="analysis.html">Charting Tools</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item more"><a href="#"><i class="fa fa-pencil-square-o"></i> Tools</a>
+                        <ul class="submenu">
+                          <li><a href="tools.html">Management Tools</a></li>
+                          <li><a href="tools.html">Welfare Tools</a></li>                       
+                        </ul>
+                    </li>
                     <li class="nav-item"><a href="dashboard.html"><i class="fa fa-dashboard"></i> Metrics</a></li>
                     <li class="nav-item"><a href="profile.html"><i class="fa fa-leaf"></i> Zoo Profile</a></li>
                 </ul>
@@ -27,13 +37,17 @@
                 <ul class="navigation-menu-show">
                     <li class="nav-item more"><a href="javascript:void(0)"><i class="fa fa-user"></i> Douglas Meehan</a>
                         <ul class="submenu">
-                            <li><a href="#">Profile</a></li>
-                            <li><a href="javascript:void(0)">Settings</a></li>
-                            <li class="more"><a href="javascript:void(0)">Switch User</a>
+                            <li class="more"><a href="javascript:void(0)">Admin</a>
                                 <ul class="submenu">
-                                    <li><a href="javascript:void(0)">John Smith</a></li>
-                                    <li><a href="javascript:void(0)">Jane Doe</a></li>
+                                  <li><a href="#">Research</a></li>
+                                  <li><a href="#">Setup</a></li>
+                                  <li><a href="#">Surveys</a></li>
+                                  <li><a href="#">Types</a></li>
+                                  <li><a href="#">Zoos</a></li>
                                 </ul>
+                            </li>
+                            <li><a href="javascript:void(0)">Manage Accounts</a></li>
+                            <li><a href="javascript:void(0)">Switch Accounts</a>
                             </li>
                             <li><a href="index.html">Log Off</a></li>
                         </ul>
