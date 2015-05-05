@@ -1,0 +1,2805 @@
+﻿/* import for the progress menu rules */
+@import url("_ProgressMenu.css");
+@import url("_Commands.css");
+@import url("_Dashboard.css");
+@import url("_Modal.css");
+
+/* rule to make the layout play nice in IE and always be full width */
+#wrap {
+    position: relative;
+    width: 100% !important;
+}
+
+#wrap.wrapFormBkgrd{
+    background-color: #efefef;
+}
+
+ul.menu {
+    position: relative;
+    top: 4px;
+}
+
+.noshow {
+    display: none !important;
+}
+
+input:focus, textarea:focus, select:focus, .editor-field .t-state-focused {
+    border: solid 1px #767676;
+}
+
+
+input[type=checkbox], input[type=radio] {
+    border: 0;
+}
+
+div#formsPanel > ul > li {
+    margin-bottom: 8px;
+}
+
+.centeredLoadMarkerWrap
+{
+    margin: 5px;
+}
+
+.loadingDisplayMarker {
+    background-image: url('../images/records_loading.gif') !important;
+    background-repeat: no-repeat;
+    display: inline;
+    padding-left: 16px;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    height: 16px; /* for IE */
+}
+
+#requestList .loadingDisplayMarker, #referralList .loadingDisplayMarker, #referralDetails .loadingDisplayMarker, #serviceRequestDetails .loadingDisplayMarker
+{
+    display: block; /* for IE */
+}
+
+.smallText {
+    font-size: .75em !important;
+}
+
+.drop-shadow {
+    display: block;
+    position: relative;
+    width: 98%;
+    z-index: 99;
+}
+
+    .drop-shadow:before, .drop-shadow:after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        bottom: 20px;
+        left: 8px;
+        width: 49%;
+        height: 15px;
+        max-width: 200px;
+        -webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+        -moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+        box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+        -webkit-transform: rotate(-3deg);
+        -moz-transform: rotate(-3deg);
+        -o-transform: rotate(-3deg);
+        transform: rotate(-3deg);
+    }
+
+    .drop-shadow:after {
+        right: 8px;
+        left: auto;
+        -webkit-transform: rotate(3deg);
+        -moz-transform: rotate(3deg);
+        -o-transform: rotate(3deg);
+        transform: rotate(3deg);
+    }
+
+    .drop-shadow > * {
+        display: block;
+        min-height: 2em;
+        padding: 4px;
+        background-color: #D9D6C5;
+        border-radius: 3px;
+    }
+
+        .drop-shadow > *:first-child {
+            border: 0;
+        }
+
+.record-validation-anchor { position: relative; display: table-cell;  }
+div.recordSurvey-validation-anchor { position: relative; width:24px; height: 24px; display: inline-block; vertical-align:top; margin-right: 10px }
+
+.field-validation-error
+{
+    font-size: .9em;
+    font-weight: bold;
+    color: #E49B3C;
+}
+
+.record-validation-anchor .field-validation-error {
+    position: absolute;
+    left: 4px;
+
+    /*background-image: url('../images/Commands/Flag_redHS.png');*/
+    /*background-image: url('../images/Icons/warning.png');*/
+    background-image: url('../images/Icons/exclamation_red_frame.png');
+    background-repeat: no-repeat;
+    color: transparent;
+
+    /*font-size: .9em;
+    font-weight: bold;
+    color: #E49B3C;*/
+}
+
+.recordSurvey-validation-anchor .field-validation-error {
+    font-size: initial;
+    background-image: url('../images/Icons/exclamation_red_frame.png');
+    background-repeat: no-repeat;
+    color: transparent;
+}
+
+
+.record-validation-anchor .field-validation-error:hover
+{
+    position: absolute;
+    top: 0; left:0;
+    background-color: #fffAF0;
+    border: 1px solid #DCA;
+    border-radius: 25px;
+    display: block;
+    width: 200px;
+    background-image: none;
+    /*color: #111;*/
+    color: #E49B3C;
+    padding: 4px 4px 4px 20px;
+}
+
+.recordSurvey-validation-anchor .field-validation-error:hover {
+    font-size: .9em;
+    background-color: #fffAF0;
+    border: 1px solid #DCA;
+    border-radius: 25px;
+    display: block;
+    width: 200px;
+    background-image: none;
+    /*color: #111;*/
+    color: #E49B3C;
+    padding: 4px 4px 4px 4px;
+}
+
+.panelActionWarning {
+    background-color: #E49B3C;
+    color: White;
+    font-size: larger;
+    font-style: italic;
+    padding: 8px 4px;
+}
+
+/*.input-required > label:after {
+    content: " *";
+}*/
+
+.validation-summary-errors, .validationSummary, .ajaxError, .octaveError {
+    margin: 4px 0;
+    padding: 4px;
+    line-height: 135%;
+    background-color: #E49B3C;
+    color: white;
+    font-style: italic;
+}
+
+.ajaxFormContent{
+    overflow-y: auto;
+    background-color: #efefef;
+}
+
+.octaveError {
+    clear: both;
+}
+
+.octaveLoad {
+    clear: left;
+    margin: 12px 4px 4px 4px;
+    padding: 2px 2px 2px 20px;
+    background: url('../images/Records_Loading.gif') center left no-repeat transparent;
+    font-size: .9em;
+    font-style: italic;
+}
+
+.tallLineHeight {
+    line-height: 135%;
+}
+
+/* since Telerik dropdowns are not marked with input-vaidation-error
+    in Google Chrome, decided to set all validation borders to same as 
+    regular border (#ccc), and rely solely on validation icons for validation feedback- Scott
+*******/
+.t-dropdown-wrap.input-validation-error
+{
+    /*border-color: #E49B3C;*/
+    border-color: #ccc;
+}
+
+.input-validation-error {
+    /*background-color: #FAFAD2 !important;*/
+    /*border-color: #E49B3C;*/
+    border-color: #ccc;
+}
+/******/
+
+.userNote {
+    margin: 1em 0;
+    padding: 1em;
+    line-height: 135%;
+    border: dotted 1px #8099AD;
+    background-color: #ededed;
+}
+
+#geocodeResults {
+    background: url('/') center left no-repeat transparent;
+    float: none !important;
+    display: inline-block;
+    position: relative;
+    top: 3px;
+}
+
+    #geocodeResults.geocodeSuccess {
+        background-image: url('../images/Icons/icon_checkmark.png');
+    }
+
+    #geocodeResults.geocodeFail {
+        background-image: url('../images/Icons/icon_redx.png');
+    }
+
+span.Block {
+    /*line-height: 135%;*/
+}
+
+/*div.actionPanel {
+    clear: both;
+    margin-top: 12px;
+    background-color: #B4C3CF;
+    color: #3E5161;
+    font-style: italic;
+    padding: 4px 6px;
+}*/
+
+#colLeft .actionPanel {
+    clear: both;
+    margin-top: 12px;
+}
+
+#clientActionPanel{
+    border: solid 1px #b4c3cf;
+}
+
+div#mainMenu nav {
+    width: 100%;
+}
+
+div.panelHeading, div.panelHeading span, div.panelHeading a {
+    background-color: transparent;
+    color: white;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+div.panelHeading {
+    padding: 8px 4px 8px 8px;
+    background-color: #8099AD;
+    border: solid 1px #888;
+    margin-bottom: 2px;
+}
+
+div.panelHeadingReadOnly, div.panelHeadingReadOnly span, div.panelHeadingReadOnly a {
+    background-color: transparent;
+    color: #db7100;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+div.panelHeadingReadOnly {
+    color: #db7100;
+    padding: 8px 4px 8px 8px;
+    background-color: White;
+    border-bottom: solid 1px #888888;
+    margin-bottom: 2px;
+}
+
+div.panelHeadingReadOnly > a > span.Icon {
+    display: none;
+}
+
+div.panelHeading > a > span.Icon {
+    display: none;
+}
+
+div.actionPanel {
+    background-color: #B4C3CF;
+    color: #3E5161;
+    font-size: 12px;
+    font-style: italic;
+    padding: 4px 6px;
+}
+
+    div.actionPanel img.arrows {
+    position: relative;
+    top: 3px;
+    margin-right: 4px;
+}
+
+input, select, textarea {
+    color: #444444;
+    font-style: normal;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    font-size: 1em;
+}
+
+textarea {
+    width: 96%;
+    height: 10em;
+}
+
+.t-splitbar-horizontal {
+    background-color: #777777; /**/
+	/*min-width: 20px;/**/
+	/*margin-right: 15px;/**/
+}
+     
+.t-splitter .t-splitbar-horizontal {
+}
+
+.t-splitbar-horizontal-hover {
+	background-color: #E49B3C;
+	background-color: #777777;
+}
+
+.t-splitbar-horizontal .t-icon {
+     vertical-align: bottom;
+}
+
+.t-collapse-prev, .t-collapse-prev, .t-expand-prev, .t-expand-next, .t-collapse-next {
+    background-color: #EFEFEF;
+    background-color: #999999;
+}
+
+.t-splitbar .t-state-hover {
+    background-color: #EFEFEF;
+}
+
+.t-ghost-splitbar {
+	background-color: #E49B3C;
+}
+
+span.t-minus-disabled,
+span.t-plus-disabled {
+	background-image: none;
+}
+
+span.identity {
+	color: Green;
+}
+
+span.FieldTitle, span.FieldTitle > a {
+	color: #DB7100;
+}
+
+span.FieldValue {
+	color: #444444;	
+}
+
+
+/*CSR*/
+
+div.t-treeview {
+    overflow: visible;
+}
+
+
+
+ul.itemList {
+    list-style-type: circle;
+    margin: 4px;
+}
+
+    ul.itemList > li {
+    margin-left: 12px;
+}
+
+li.floatedLeftInput {
+    overflow: auto;
+}
+
+    li.floatedLeftInput > input {
+        float: left;
+    }
+
+    li.floatedLeftInput > div {
+        margin-left: 24px;
+    }
+
+div.loginListContainer {
+    margin: 8px 0;
+}
+
+div.loginListItem {
+    overflow: auto;
+    padding: 4px 0;
+    border-bottom: solid 1px #ccc;
+}
+
+div.loginListItem > div {
+    float: left;
+}
+
+div.loginListItem div.loginLink {
+
+}
+
+div.loginListItem div.loginContent {
+    margin-left: 20px;
+    line-height: 150%;
+    color: #666;
+}
+
+/*div.loginListItem div.loginContent h3 {
+    font-size: 1.3em;
+}*/
+
+div.loginListItem div.loginContent h5 {
+    /*font-style: italic;*/
+    font-weight: normal;
+    color: #666;
+}
+
+div.loginListItem div.loginLink form a.next {
+    padding: 2px 8px 2px 20px;
+    color: white;
+    text-align: center;
+    background: url('../images/commands/PlayHS.png') .1em .25em no-repeat #E49B3C;
+}
+
+/* general rules */
+/* rules deals with elements overflowing their boundary, should only have an effect in very random situations */
+.recordContext {
+    overflow: hidden !important;
+}
+
+#ajaxPagingAndFilterIndicator {
+    margin-left: 12px;
+}
+
+#ajaxSortingIndicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ccc;
+    opacity: .75;
+    filter: alpha(opacity=75);
+    text-align: center;
+}
+
+    #ajaxSortingIndicator > span {
+    display: block;
+    margin-top: 4em;
+        opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+
+/* overrides style rules inherited from the clara sheet for this element */
+.panelBorder {
+    clear: left;
+    /*position: relative;*/
+    /*overflow: auto;*/
+    padding: 0 0 0 0;
+}
+
+
+#colLeft .householdProgressDisplay .panelHeading {
+    background-color: #8099AD;
+}
+
+#colLeft .householdProgressDisplay .panelBody h4, #colLeft .householdProgressDisplay li {
+    margin: 8px 0;
+}
+
+#colLeft .householdProgressDisplay .panelBody ul {
+    margin-left: 4px;
+}
+
+.panelBody {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    padding: 4px;
+}
+
+.panelBody.noPadding {
+    padding: 0px;
+}
+
+.panelBody.thinPadding {
+    padding: 0px;
+}
+
+.panelBody ul, .panelBody li{
+    /*overflow: auto;*/
+}
+
+.panelInput ul, .panelInput li{
+    overflow: auto;
+}
+
+.panelBorder.noMargin {
+    margin: 0px;
+}
+
+
+/* rules to customize the panel body element */
+
+.panelBody p {
+    line-height: 135%;
+    margin: 4px;
+}
+
+.panelBody a {
+    color: Black;
+    text-decoration: none;
+}
+
+.login .panelBody a {
+    color: #E49B3C;
+}
+
+.login .panelBody a:hover {
+    color: #996a32;
+}
+
+div.panelBorder.vertStretchedCenter #clientActionPanel
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+div.panelBorder.vertStretched > .panelBody > form > .actionPanel {
+    position: absolute;
+    bottom: 72px; /* place immediately above footer */
+    width: 100%;
+}
+
+.panelInstruction {
+    padding: 4px;
+    color: White;
+    background-color: #3E5161;
+    font-style: italic;
+}
+
+ul.vertForm {
+}
+
+    ul.vertForm li {
+    margin-bottom: 12px;
+    line-height: 135%;
+}
+
+input.next, a.next {
+	display: inline-block;
+	width: auto;
+    margin: 2px 4px 2px 0;
+    padding: 3px 10px;
+    font: bold 1.167em "Trebuchet MS", Arial, helvetica, Sans-Serif;
+	font-size: 10pt;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+    background-color: #E49B3C;
+    border: solid 2px #E49B3C;	
+	cursor: pointer;
+}
+
+
+
+input.next:hover, a.next:hover {
+        /*border: solid 2px #ccc;*/
+    }
+
+    input.next:hover, a.next:focus {
+}
+
+input.next:active, a.next:active {
+    /*border: solid 2px #E49B3C;
+    border: solid 2px #777777;*/
+    border: solid 2px White;
+}
+
+a.next {
+	padding: 5px 11px;	
+}
+
+    input.next.disabled {
+        cursor: default;
+        color: lightgray;
+        background-color: #ccc;
+        background-color: #acacac;
+        background-color: #777777;
+        border: solid 2px #acacac;
+        border: solid 2px #ccc;
+    }
+
+    input.next.greyback, a.next.greyback {
+        color: white;
+        background-color: #ccc;
+        background-color: #acacac;
+        background-color: #777777;
+        border: solid 2px #acacac;
+        border: solid 2px #ccc;
+    }
+
+    input.next.greyback:active, a.next.greyback:active {
+            border: solid 2px #ccc;
+            border: solid 2px #777777;
+	    /*border-top: solid 2px #acacac;
+	    border-left: solid 2px #acacac;
+	    border-bottom: solid 2px #ececec;
+	    border-right: solid 2px #ececec;*/
+    }
+
+#filterForm {
+/*    margin: -4px -4px 4px -4px;*/
+}
+
+.submitNoteDefault {
+    font-style: italic;
+    padding-left: 16px;
+}
+
+.submitNoteLoading {
+    width: auto;
+    font-style: italic;
+    padding-left: 16px;
+    background: url('../images/Records_Loading.gif') center left no-repeat transparent;
+}
+/* rules that control the opacity shift for model icons and command icons */
+a > span.Icon > img {
+    opacity: 0.75;
+    filter: alpha(opacity=75);
+}
+
+a:hover > span.Icon > img {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+/* rules to customize the panel body for specific elements */
+.recordTile {
+    width: auto;
+    overflow-y: hidden;  /* prevents vertical scroll from showing up in record tiles - isolated to Chrome */
+}
+
+.colCenter .Tile.RelatedPerson span.Block{
+    width: 175px;
+}
+
+.recordTileInline .TileFrame img {
+    height: 70%;
+}
+
+.recordTile > *, .recordTile img.t-image {
+        float: left;
+    }
+
+.recordTile .t-treeview {
+        min-width: 250px;
+}
+
+/* rules to customize the content items listed in the center and left columns */
+.recordTreeViewNode {
+    float: left;
+}
+
+    .recordTreeViewNode a {
+        display: block;
+    }
+
+    .recordTreeViewNode a.iconWrap {
+        float: left;
+    }
+
+    .recordTreeViewNode a.blockWrap {
+        clear: both;
+        min-height: 2.5em;
+    }
+
+.recordTreeViewNode.short ul.commandBar {
+        float: left !important;
+}
+/* rules that customize the items listed in the index portion of the right column */
+/*.recordIndex div.octaveLoad {
+    display: none!important;
+}*/
+.recordIndexItem {
+    overflow: auto;
+    min-height: 1.5em;
+    margin-bottom: 4px;
+}
+
+    .recordIndexItem > a > span.Icon, .recordIndexItem > a > span.Block {
+    float: left;
+}
+
+    .recordIndexItem span.Block, .recordActions span.Block {
+    height: 100%;
+    margin: 4px;
+    line-height: 135%;
+    vertical-align: middle;
+}
+
+.recordIndexItem > span.itemCount {
+    position: relative;
+    top: 6px;
+    left: -2px;
+    float: left;
+    font-size: .8em;
+}
+/* rule that slightly shifts the position of the icon in record action elements */
+.recordActions li span.Icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    float: left;
+}
+
+.recordActions li a span.Icon {
+    opacity: .75;
+    filter: alpha(opacity=75);
+}
+
+    .recordActions li a:hover span.Icon {
+        opacity: 1;
+    filter: alpha(opacity=100);
+    }
+
+    .recordActions li a:hover span.Block {
+        color: #DB7100;
+    }
+/* rules that set the colors for the text items inside the record item panel */
+.recordDesc {
+    color: Gray;
+}
+/* rules that style the data columns of the record views */
+.recordDetails > div, .recordEdit > div {
+    margin: 0 4px;
+    padding: 4px 0;    
+    min-height: 1em;
+}
+
+.recordDetails > div.editor-label, .recordEdit > div.editor-label, .surveyContainer > div.display-label {    
+    clear: left;
+    float: left;
+    padding-right: 4px;
+    font-weight: bold;
+    text-align: right;
+    width: 150px;
+    background-color: #EFEFEF;
+        border-bottom: solid 0px #EFEFEF;
+    margin-bottom: 2px;
+}
+
+.recordDetails > div.editor-field, .recordEdit > div.editor-field, .surveyContainer > div.display-field {
+    padding-left: 4px;
+    background-color: #EFEFEF;
+    border-bottom: solid 0px #EFEFEF;
+    margin-bottom: 2px;
+}
+
+.editor-label {
+    border-right: solid 3px transparent;
+    font-weight: bold;
+    margin: 2px;
+}
+
+.editor-label.input-required {
+    border-color: #E49B3C;
+}
+
+.recordDetailsPanel {
+    width: 100%;
+}
+
+.recordDetailsRow {
+}
+
+.recordDetailsCell {
+    min-height: 1.35em;
+    line-height: 135%;
+    padding: 4px;
+}
+
+.recordDetailsCell.editor-label {
+    font-weight: bold;
+}
+
+.recordDetailsCell.editor-field {
+    padding-left: 8px;
+}
+
+.recordDetailsPanel.tableStack {
+    display: table;
+}
+
+.recordDetailsPanel.tableStack .recordDetailsRow {
+        display: table-row;
+}
+
+.recordDetailsPanel.tableStack .recordDetailsCell {
+    display: table-cell;
+    padding: 4px;
+    vertical-align: top;
+    border-bottom: solid 2px #fff;
+}
+
+.recordDetailsPanel.tableStack .recordDetailsCell.editor-label {
+    width: 200px;
+    text-align: right;
+    background-color: #B4C3CF;
+    border-right: solid 1px #fff;
+}
+
+.recordDetailsPanel.tableStack .recordDetailsCell.editor-field {
+    background-color: #D9D6C5;
+}
+    
+.recordDetailsPanel.recordDetailsSupplemental {
+}
+
+.verticalStack .editor-label {
+    border-right: 0;
+    border-left: solid 3px transparent;
+}
+
+.verticalStack .editor-label.input-required {
+    border-right: 0;
+    border-color: #E49B3C;
+}
+
+#entityForm {
+    background-color: #EFEFEF;
+}
+
+#entityForm.verticalStack .recordEdit > div.editor-label, .surveyContainer.verticalStack > div.display-field {
+    float: none;
+    width: auto;
+        height: auto !important;
+    text-align: left;
+    padding-right: 0;
+    padding-left: 4px;
+}
+
+    #entityForm.verticalStack .recordEdit > div.editor-label, .recordEdit.verticalStack > div.editor-field, .surveyContainer.verticalStack > div.display-field {
+    border-bottom: 0;
+    background-color: transparent;
+}
+
+#entityForm.verticalStack .recordEdit > div.editor-field {
+    background-color: transparent;
+}
+
+#entityForm .recordEdit .inputField {
+    display: inline;
+}
+
+#entityForm .dateField + .field-validation-error {
+    position: relative;
+    top: 6px;
+}
+
+#entityForm .selectLookupField + .field-validation-error, #entityForm .selectField + .field-validation-error {
+    position: relative;
+    top: 5px;
+    left: 5px;
+}
+
+
+/* rule for fixing input div weirdness in chrome for entity form select lookup validation */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    /*#entityForm .editor-field {
+        overflow: auto;
+    }*/ 
+    #entityForm .editor-field .t-combobox {
+        float: left;
+    }
+
+    #entityForm .selectField + .field-validation-error {
+        position: relative;
+        top: 5px;
+        left: 3px;
+    }
+
+    #entityForm .selectLookupField + .field-validation-error {
+        top: 0;
+    }
+
+    #entityForm .selectLookupField a {
+        position: relative;
+        left: 3px;
+    }
+
+    #entityForm .selectLookupField a > img {
+        position: relative;
+        top: 3px;
+    }
+}
+
+/* custom template widths - begin */
+
+.record-form .vertical #Entity_Identity_Contact_Prefix {
+    width: 50px;
+}
+
+.record-form .vertical #Entity_Identity_Contact_Suffix {
+    width: 50px;
+}
+
+.record-form #Entity_Identity_Contact_LastName {
+    width: 245px;
+}
+
+.record-form #Entity_Identity_Contact_FirstName {
+    width: 245px;
+}
+
+.record-form #address_recordPage_0__Identity_Address_Street1 {
+    width: 245px;
+}
+
+.record-form #address_recordPage_0__Identity_Address_Street2 {
+    width: 245px;
+}
+
+.record-form #address_recordPage_0__Identity_Address_City {
+    width: 150px;
+}
+
+.record-form #address_recordPage_0__Identity_Address_State {
+    width: 50px;
+}
+
+input#address_recordPage_0__Identity_Address_ZipCode {
+    width: 50px;
+}
+
+.record-form #address_recordPage_0__Identity_Address_ZipExtension {
+    width: 50px;
+}
+
+.record-form #address_recordPage_1__Identity_Address_Street1 {
+    width: 245px;
+}
+
+.record-form #address_recordPage_1__Identity_Address_Street2 {
+    width: 245px;
+}
+
+.record-form #address_recordPage_1__Identity_Address_City {
+    width: 150px;
+}
+
+.record-form #address_recordPage_1__Identity_Address_State {
+    width: 50px;
+}
+
+.record-form #address_recordPage_1__Identity_Address_ZipCode {
+    width: 50px;
+}
+
+.record-form #address_recordPage_1__Identity_Address_ZipExtension {
+    width: 50px;
+}
+
+.record-form #email_recordPage_0__Identity_Email_Value {
+    width: 300px;
+}
+
+.record-form #email_recordPage_1__Identity_Email_Value {
+    width: 300px;
+}
+
+/* custom template widths - end */
+
+.recordEdit {
+    /*background-color: #EFEFEF; removed per Bug#6523, "linked rcords have grey background color border" */
+    /*border-bottom: solid 1px #EFEFEF;*/
+}
+
+.recordEdit div.display-field {
+    background-color: #EFEFEF;
+    border-bottom: solid 2px #EFEFEF;
+}
+
+.recordEdit div.display-label {
+    font-weight: bold;
+    background-color: #EFEFEF;
+    border-bottom: solid 0px #EFEFEF;
+}
+
+    .recordEdit td.recordSubmit, .recordDelete td.recordSubmit {
+    background-color: #B4C3CF;
+}
+
+        .recordEdit td.recordSubmit img, .recordDelete td.recordSubmit img, .recordFilter .recordSubmit img {
+    position: relative;
+    top: 3px;
+    left: -4px;
+}
+
+.recordDelete td.recordDeleteHeader {
+    font-size: 16px;
+    font-style: italic;
+    color: White;
+    background-color: #E49B3C;
+}
+
+.recordFilter {
+    background-color: #B4C3CF;
+}
+
+    .recordFilter td ul, .recordFilter td ul li {
+    margin-top: 4px;
+}
+
+    .recordFilter .recordSubmit {
+    padding: 4px;
+}
+
+.recordFilterSummary {
+    margin: 0px 0;
+    padding: 4px;
+    font-size: .9em;
+    background-color: #B4C3CF;
+}
+
+
+#filterFormResults span.field-validation-error {
+    position: relative;
+    top: 20px;
+    right: -4px;
+}
+
+/* rules for the paging bar control for paged datagrid displays */
+.recordPaginationBar {
+    overflow: auto;
+    margin-top: 2px;
+    padding: .5em 0 .5em 4px;
+    background-color: #B4C3CF;
+    font-size: 13px;
+}
+
+.recordPaginationBar > div {
+    height: 1.2em;
+}
+
+    .recordPaginationBar .recordPaginationInputGroup {
+    float: left;
+    margin-right: 2.5em;
+}
+
+.recordPaginationBar .pagingButtons a {
+    position: relative;
+    top: -1px;
+    text-decoration: none;
+}
+
+    .recordPaginationBar .pageNumControls input, .recordPaginationBar .recordCountPerPage input {
+    width: 50px;
+    text-align: center;
+}
+
+    .recordPaginationBar .recordTotalsDisplay, .recordPaginationBar ul.commandBar {
+    position: relative;
+    top: 4px;
+}
+
+.recordPaginationBar .recordPaginationCommands span.Block {
+    position: relative;
+    top: -3px;
+}
+
+.itemTable {
+    display: table;
+    min-width: 100%;
+}
+
+    .itemTable > div {
+        display: table-row;
+    }
+
+        .itemTable > div > div {
+            display: table-cell;
+        }
+
+    .itemTable .panelBody {
+        padding: 0;
+    }
+/* rules for the 'datagrid' display type of view */
+.recordDataGrid {
+    margin-bottom: 12px;
+}
+
+#recordTable {
+    /*overflow: hidden;
+    overflow-x: auto;
+    ms-overflow-x: auto;*/
+    position: relative;
+}
+
+#recordTable > .noRecordsFoundMessage{
+    font-style: italic;
+    padding: 8px;
+    color: #e49b3c;
+}
+
+    #recordTable table {
+    min-width: 100%;
+    margin-bottom: 4px;
+}
+
+#recordTable table tr {
+    border-bottom: solid 1px #888;
+}
+
+
+#recordTable table tr.recordDataGridRowEven {
+}
+
+#recordTable table tr.recordDataGridRowOdd {
+    background-color: #efefef;
+}
+
+#recordTable table tr.recordDataGridRowTotal {
+    background-color: #b4c3cf;
+    color: black;
+    /*font-weight: bold;*/
+}
+
+#recordTable table td.recordDataGridColumnTotal {
+   color: black;
+   /*font-weight: bold;*/
+   border-right: 1px solid black;
+   border-left: 1px solid black;
+}
+
+#recordTable table tr.recordDataGridRowTotal td.recordDataGridColumnTotal {
+   font-weight: bold;
+}
+
+        #recordTable table th, #recordTable table td {
+    margin-right: 4px;
+    padding: 8px 8px 8px 8px;
+    vertical-align: top;
+    text-align: left;
+    font-size: 13px;
+}
+
+        #recordTable table th {
+    color: White;
+    font-weight: normal;
+    background-color: #888;
+    white-space: nowrap;
+}
+
+            #recordTable table th a.sortLink img {
+    position: relative;
+    top: 4px;
+}
+
+        #recordTable table td * {
+    vertical-align: top;
+}
+
+        #recordTable table td > * {
+    padding-top: 8px;
+}
+
+    #recordTable ul.recordLink {
+    position: relative;
+    top: -8px;
+    overflow: visible;
+    margin-right: 18px;
+    white-space: nowrap;
+}
+
+    #recordTable a {
+    margin: 4px 0 4px 4px;
+    font-size: 13px;
+    color: black;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+        #recordTable a:hover {
+    color: #DB7100;
+}
+
+    #recordTable table th a {
+    color: white;
+}
+
+#recordTable a.matchDetails {
+    font-size: 16px;
+    color: #888888;
+}   
+
+#recordTable table th a > span.cmd_unsorted {
+    visibility: hidden;
+}
+
+#recordTable table th a:hover > span.cmd_unsorted {
+    visibility: visible;
+}
+
+    #recordTable table th.filteredField, #recordTable table th.filteredField a {
+    font-weight: bold;
+}
+
+    #recordTable table th a:hover {
+    color: White;
+    text-decoration: underline;
+}
+
+    #recordTable a.recordDataGridPagination {
+    display: block;
+    float: left;
+    margin: 0 0 8px 4px;
+}
+
+#recordTable {
+    overflow: visible;
+}
+
+.itemTable #recordTable {
+    overflow-y: auto;  /* can change to scroll if you need to adjust visually */
+    overflow-x: auto;
+}
+
+table#filteredPageTable, table#filteredModalPageTable, #recordTable table, #recordModalTable table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#filterForm, #filterModalForm {
+/*    margin-bottom: -8px; - was causing overlap of "No Records Found" message with filterform container above it - Scott */
+    padding-bottom: 8px;
+    background-color: #B4C3CF;
+}
+
+#filterForm div.recordSubmit, #filterModalForm div.recordSubmit {
+    margin-left: 8px;
+        white-space: nowrap;
+}
+
+a#filterBarToggle, a#entityFormToggle, div.submitAnnotation, a.contentToggle {
+    /*width: 16px;
+    height: 16px;*/
+    padding-left: 16px;
+    position: relative;
+    margin-right: 4px;
+    text-decoration: none;
+}
+
+a#entityFormToggle, div.submitAnnotation, a.contentToggle {
+    display: inline-block;
+    /*top: 8px;
+    float: left;*/
+}
+
+a#filterBarToggle {
+    display: inline-block;
+    top: -2px;
+}
+
+    a#filterBarToggle.expanded, a#entityFormToggle.expanded, a.contentToggle.expanded {
+        background: url('../images/commands/filter_expanded.png') top left no-repeat transparent;
+    }
+
+    a#filterBarToggle.collapsed, a#entityFormToggle.collapsed, a.contentToggle.collapsed {
+        background: url('../images/commands/filter_collapsed.png') top left no-repeat transparent;
+    }
+
+div.filterPanelContainer {
+    display: table;
+    /*width: 100%;*/
+}
+
+div.filterPanelContainer > div {
+    display: table-row;
+}
+
+div.filterPanelContainer > div > ul {
+    white-space: nowrap;
+    display: table-cell;
+    vertical-align: top;
+}
+
+div.filterPanelContainer > div > ul li {
+    margin: 4px 8px;
+    white-space: nowrap;
+}
+
+div.filterPanelContainer div.recordSubmit {
+    margin-right: 20px;
+    padding-top: 1.5em;
+    /*overflow: auto;*/
+}
+    /*div.filterPanelContainer div.recordSubmit input.next {
+        display: block;
+        float: left;
+    }*/
+div#filterModalPanelContainer div.recordSubmit {
+    margin-right: 20px;
+}
+
+div.filterPanelContainer.verticalFilterPanel, div.filterPanelContainer.verticalFilterPanel > div, div.filterPanelContainer.verticalFilterPanel > div > ul {
+    display: block;
+}
+
+div.filterPanelContainer.verticalFilterPanel ul {
+    overflow: auto;
+    margin-left: 35px;
+    padding: 4px 0;
+}
+
+div.filterPanelContainer.verticalFilterPanel #matchInputs ul {
+    overflow: auto;
+    margin-left: 0px;
+    padding: 4px 0;
+}
+
+
+div.filterPanelContainer.verticalFilterPanel div.recordSubmit {
+/*    margin-bottom: 1.5em;*/
+}
+
+.recordTableContainer {
+    /*overflow: auto;*/
+}
+
+.recordTable .panelBody {
+    width: 99%;
+    overflow-x: scroll;
+}
+
+/* filter panel classes to make submit pinned to bottom of page*/
+.t-pane.verticalFilterColumnContainer {
+    position: relative;
+    background-color: #B4C3CF;
+}
+
+#colCenter {
+    /* prevent floating divs, "tile-partial" and "tile-full" from overlapping on resize down - Scott */
+    /*
+        min-width: 1000px; 
+    */
+}
+
+#colCenter.verticalCenterColumn {
+    overflow: auto;
+}
+
+.recordSubmit.verticalSubmit {
+    position: absolute;
+    bottom: 0;
+    padding: 4px;
+}
+
+.recordSubmit input.next
+{
+    border: solid 2px #ccc;
+}
+
+.recordSubmit input.next:active
+{
+    /*border: solid 2px white;*/
+}
+
+
+.actionPanel {
+    background-color: #B4C3CF;
+    color: #3E5161;
+    font-style: italic;
+    padding: 4px 6px;
+}
+
+
+
+
+    .actionPanel a {
+    text-decoration: underline;
+}
+
+    .actionPanel .next {
+        text-decoration: none !important;
+    color: white;
+        border: solid 2px #ccc;
+    }
+
+    .actionPanel .next.greyback{
+        background-color: #8099ad;
+}
+
+    .actionPanel a.next:hover {
+    color: white;
+}
+
+/*.matchButton {
+    text-decoration: none;
+    background-color: #e49b3c;
+    color: white !important;
+    padding: 2px 6px 2px 6px;
+    border: 2px solid #ccc;
+}*/
+
+.t-in .recordTreeViewNode {
+    position: relative;
+    top: -3px;
+}
+/* sets the hover color for record item text and anchors */
+.t-in:hover .recordTreeViewNode, 
+.t-in:hover .recordTreeViewNode span, 
+.t-in:hover .recordTreeViewNode a,
+.recordIndexItem a:hover {
+    color: #DB7100;
+}
+
+.household form ul li {
+    margin-bottom: 12px;
+    line-height: 135%;
+}
+
+.household .contactInfoContainer .toggleCheckbox {
+    margin-bottom: 4px;
+}
+
+/* household person details form should float fields*/
+.household .personForm {
+    overflow: auto;
+}
+
+.household .personForm ul {
+    overflow: auto;
+    width: 47%;
+    float: left;
+    margin: 4px;
+}
+
+.household .contactInfoContainer {
+    clear: left;
+    overflow: auto;
+}
+
+.household .contactInfoContainer .addressColumn {
+    width: 50%;
+    clear: none;
+    float: left;
+}
+
+.household contactInfoContainer .addressColumn .panelBody {
+    width: 97%;
+}
+
+.household .contactInfoContainer .contactColumn {
+    width: 100%;
+    clear: left;
+    overflow: auto;
+}
+
+.household .contactInfoContainer .contactColumn .phoneContainer {
+    float: left;
+    margin-right: 4px;
+    margin-bottom: 4px;
+}
+
+.household.collapsed .addressColumn {
+    float: none;
+    width: auto;
+}
+
+.household.collapsed .addressColumn, .household.collapsed ul {
+    min-width: 300px;
+}
+
+.household.collapsed .actionPanel {
+    position: static;
+}
+
+.household .contactInfoContainer .addressContainer {
+    overflow: auto;
+}
+
+    .household .contactInfoContainer .addressContainer .addressFieldFloat {
+        float: left;
+        margin-right: 50px;
+        padding-bottom: 10px;
+    }
+
+    .household .contactInfoContainer .addressContainer .addressFieldClear {
+        clear: left;
+        float: left;
+        margin-right: 50px;
+        padding-bottom: 10px;
+    }
+
+        .household .contactInfoContainer .addressContainer .addressFieldFloat > div, .household .contactInfoContainer .addressContainer .addressFieldClear > div {
+            margin-bottom: 4px;
+        }
+
+    .household .contactInfoContainer .addressContainer input.addressFieldStreet {
+        width: 250px;
+    }
+
+    .household .contactInfoContainer .addressContainer input.addressFieldApartment {
+        width: 50px;
+    }
+
+    .household .contactInfoContainer .addressContainer input.addressFieldCity {
+        width: 200px;
+    }
+
+    .household .contactInfoContainer .addressContainer select.addressFieldState {
+        width: 50px;
+    }
+
+    .household .contactInfoContainer .addressContainer input.addressFieldZipCode {
+        width: 100px;
+    }
+
+    .household .contactInfoContainer .addressContainer input.addressFieldZipExtension {
+        width: 65px;
+    }
+
+.household .contactInfoContainer .phoneContainer {
+}
+
+    .household .contactInfoContainer .phoneContainer > div {
+    margin-bottom: 4px;
+}
+
+.household .contactInfoContainer .emailContainer input {
+    width: 250px;
+}
+
+.household .contactInfoContainer .validationFloat {
+    position: relative;
+    top: 1em;   
+}
+
+.household .viewperson ul li {
+    padding: 4px 0;
+}
+
+.household .viewperson ul li .fieldlabel {
+    font-weight: bold;
+}
+
+.household .householdItemTile {
+    overflow: auto;
+    white-space: nowrap;
+    margin-bottom: 8px;
+    line-height: 150%;
+}
+
+    .household .householdItemTile > * {
+    float: left;
+}
+
+.household .relationshipSummaryItem {
+    overflow: auto;
+    white-space: nowrap;
+    margin-bottom: 8px;
+    line-height: 135%;
+}
+
+    .household .relationshipSummaryItem .content ul {
+    margin-left: 1em;
+}
+
+        .household .relationshipSummaryItem .content ul li {
+    margin: .5em 0;
+}
+
+.household .financialLineItem {
+    overflow: auto;
+    white-space: nowrap;
+    margin-bottom: 1em;
+    padding-bottom: 2px;
+}
+
+    .household .financialLineItem > * {
+    float: left;
+}
+
+    .household .financialLineItem .content {
+    margin-left: 8px;
+}
+
+.household .financialSummaryLineItem {
+    clear: both;
+    margin: .5em 0;
+    font-weight: bold;
+}
+
+
+div.surveyPage {
+	min-height: 200px;
+    margin-left: 12px;
+}
+
+    div.surveyPage div.description {
+    background-color: #B4C3CF;
+    color: #3E5161;
+    color: #333333;
+    padding: 4px;
+}
+
+div.surveyQuestions {
+	min-height: 0px;
+    padding: 12px;
+}
+
+div.surveyQuestion {
+	padding: 4px 0;
+	margin-bottom: 4px;
+}
+
+div.surveyQuestion div.question div.title {
+    margin-bottom: .75em;
+    font-weight: bold;
+}
+
+div.surveyQuestion div.question div.instructions {
+    margin-bottom: .75em;
+}
+
+div.surveyQuestion div.question span.field-validation-error {
+    margin-left: 8px;
+}
+
+div.surveyQuestion div.question div.listQuestion table.likert td, div.surveyQuestion div.question div.listQuestion table.likert th {
+    padding: 4px;
+}
+
+div.surveyQuestion div.question div.listQuestion table.likert th.answer {
+    background-color: white;
+}
+
+div.surveyQuestion div.question div.listQuestion table.likert th.option {
+    background-color: #3E5161;
+    border: 1px solid #888888;
+    color: White;
+    font-weight: normal;
+    max-width: 200px;
+    min-width: 100px;
+    text-align: center;
+    width: 150px;
+}
+
+div.surveyQuestion div.question div.listQuestion table.likert td.answer {
+    max-width: 200px;
+    min-width: 150px;
+    padding: 10px 4px;
+    color: #222;
+}
+
+div.surveyQuestion div.question div.listQuestion table.likert td.option {
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: solid 2px #888;
+}
+
+div.surveyAnswer {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    overflow: visible;
+    display: inline-block;  
+}
+
+div.surveyAnswer replyValue {
+    margin-bottom: 4px;
+}
+
+    div.surveyAnswer textarea {
+    width: 400px;
+    height: 150px;
+}
+
+div.surveyInput {
+    float: left;
+    padding-right: 4px;
+}
+    
+div.surveyText {
+}
+
+.surveyProgress #progressMenu li a {
+    font-size: 1em;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.surveyProgress #progressMenu li.active a {
+    font-weight: bold;
+}
+
+.singlePageProgress ul{
+    list-style-type:none;
+    padding: 0;
+    margin: 0;
+}
+
+.singlePageProgress li
+{
+padding-top: 4px;
+padding-left: 18px;
+padding-bottom: 4px;
+}
+
+.singlePageProgress li.active   {
+    background-image: url("../images/Commands/GoToNextHS.png");
+    background-repeat: no-repeat;
+    background-position: 0 4px;
+}
+
+.singlePageProgress li a:hover
+{
+    color: #DB7100;
+}
+
+span.attendancePresentTrue {
+    padding: 6px;
+    border-left: solid 4px green;
+}
+
+span.attendancePresentFalse {
+    padding: 6px;
+    border-left: solid 4px red;
+}
+
+span.attendancePresent, span.attendancePresentUnknown {
+    padding: 6px;
+    border-left: solid 4px transparent;
+}
+
+div#formsPanel li {
+    margin: 2px;
+}
+
+ul.statusList {
+}
+
+    ul.statusList li a {
+    display: block;
+	margin-left: 4px;
+	padding: 2px 0 2px 20px;
+}
+
+    ul.statusList li.current a {
+	background: transparent url('/Content/Images/commands/FormRunHS.png') no-repeat center left;
+    font-weight: bold;
+}
+
+/* column specific rules */
+/* rules that customize the layout of the panel items for hte left column */
+
+
+#colLeft .panelHeading,
+#colRight .panelHeading {
+    background-color: #888;
+}
+
+
+#colLeft .recordPageSummary .panelHeading {
+    background-color: White;
+    color: #DB7100;
+    border: 1px solid white;
+    border-bottom: 1px solid #888888;
+    margin-bottom: 4px;
+}
+
+#colLeft .recordPageSummary .panelHeading > a, 
+        #colLeft .recordPageSummary .panelHeading > a > span {
+    background-color: White;
+    color: #DB7100;
+}
+
+    #colLeft .account .panelBody p, #colLeft .account .panelBody ul {
+    line-height: 135%;
+}
+
+    #colLeft .account .panelBody a {
+    color: Orange;
+}
+
+#colRight .account .panelInfo {
+    line-height: 135%;
+    margin: 4px;
+    font-size: .9em;
+}
+
+#colCenter .recordPageSummary .panelBody .panelHeading {
+    background-color: White;
+    color: #DB7100;
+    background-color: #B4C3CF;
+    color: White; 
+    color: #666666;
+    border-bottom: 1px solid #888888;
+}
+
+    #colCenter .recordPageSummary .panelBody .panelHeading.subHeading {
+        background-color: White;
+        color: #DB7100;
+        border: 1px solid white;
+        border-bottom: 1px solid #888888;
+    }
+
+body.itemSummary #colCenter .recordPageSummary .panelBody div.recordPageSummary-optionalTable {
+    display: table;
+}
+
+body.itemSummary #colCenter .recordPageSummary .panelBody div.recordPageSummary-optionalTableRow {
+    display: table-row;
+}
+
+body.itemSummary #colCenter .recordPageSummary .panelBody div.recordPageSummary-optionalTableCell {
+    display: table-cell;
+    vertical-align: top;
+}
+
+#colLeft .recordPageSummary .panelBody .panelHeading > a, 
+#colLeft .recordPageSummary .panelBody .panelHeading > a > span {
+    background-color: White;
+    color: #DB7100;
+}
+/* rules to customize command icon styles for the footer actions */
+#footer {
+    height: 72px;
+    margin-top: -73px;
+    position: relative;
+}
+
+#footer > #copyright, #footer > #legal {
+    position: absolute;
+    bottom: 4px;
+}
+
+#footer > #legal {
+    right: 0;
+}
+
+    #footer #actions {
+    height: auto;
+}
+
+        #footer #actions .panelHeading {
+    display: none;
+}
+
+        #footer #actions .panelBody ul {
+    float: right;
+}
+
+        #footer #actions .panelBody li {
+    float: left;
+}
+
+        #footer #actions .panelBody span.Block {
+    display: none;
+}
+
+        #footer #actions .panelBody span.Icon {
+    margin-left: 4px;
+    position: relative;
+    top: -1px;
+}
+
+div.inputBorder {
+    background-color: #FFFFFF;
+    border: 1px solid #E49B3C;
+    padding: 0px;
+}
+/* telerik overrides */
+/* validation display */
+.t-state-error, .t-widget.t-state-error, .t-widget .t-state-error, .t-widget.input-validation-error, .t-widget .input-validation-error {
+    background-color: #FFFFFF;
+    /*border: 1px solid #E49B3C;*/
+    border: 1px solid #ccc;
+}
+
+/* slightly shifts the position of the model image in the telerik tree views */
+img.t-image {
+    position: relative;
+    top: -3px;
+}
+
+.itemSelectModal .panelHeading ul.commandBar {
+    display: none; /*hides command icons*/
+}
+
+/* removes the styles set by the hover and select states set by telerik on the treeview items */
+.t-treeview .t-state-hover, .t-treeview .t-state-selected {
+    background-color: white; /* !important; - removing does not seem to have any impact */
+    border: 1px solid white; /* !important; - removed because causing hover movement in Assistance menu - Scott*/
+}
+
+#SurveyProgress .t-state-selected {
+    color: black !important;
+}
+
+#colLeft .t-dropdown
+{
+    float: none;
+}
+
+
+.t-dropdown {
+    background-color: white;
+    float: left;
+    /*height: 20px; - might not need this - Scott */
+}
+
+.t-state-default
+{
+    border-color: #ccc;  /* is this too agressive in order to set border color on telerik ddls? - Scott */
+}
+
+.itemSelectModal .t-dropdown {
+    height: 1.5em;
+}
+
+.t-dropdown .t-input {
+    color: #333;
+}
+
+.t-dropdown .t-arrow-down {
+    background-position: -16px -176px;
+}
+
+#householdForm .t-dropdown{
+    height: 25px;
+    float: none;
+}
+
+#relationshipsForm .t-dropdown {
+    position: relative;
+    
+    margin-right: 8px;
+}
+
+.t-dropdown .t-state-focused {
+    background-color: white;
+    border: solid 1px #767676;
+}
+
+.t-combobox {
+    background-color: white;
+}
+
+.t-combobox .t-input {
+    color: #333;
+}
+
+.t-combobox .t-header {
+    background-color: transparent;
+}
+
+.t-combobox .t-arrow-down {
+    background-position: -16px -176px;
+}
+
+#relationshipsForm .t-combobox {
+    position: relative;
+    top: 8px;
+}
+
+.t-combobox .t-state-focused {
+    background-color: white;
+}
+
+.t-upload {
+    padding: 2px 0 8px 0;
+}
+
+.t-upload > * {
+    float: left;
+    padding: 4px;
+}
+
+.t-upload .t-dropzone > em {
+    display: none;
+}
+
+.t-upload-files {
+    padding: 4px;
+    background-color: transparent;
+    line-height: 1em;
+}
+
+    .t-upload-files .t-progress {
+        display: none;
+    }
+
+.t-popup {
+    font-size: .9em;
+}
+
+.t-popup .t-state-selected {
+    background-color: #8099AD;
+}
+
+.t-state-disabled, .t-state-disabled:hover, .t-state-disabled .t-link, .t-widget .t-link.t-state-disabled, .t-state-disabled .t-button {
+    color: black;
+}
+
+.t-loading {
+    background: url('../2012.2.607/metro/loading.gif') left top no-repeat transparent !important;
+}
+
+table.likert th.answer {
+    background-color: white;
+}
+
+/*#TabStrip.t-tabstrip {
+    background-color: #B4C3CF;
+    border-color: transparent;
+}*/
+
+.t-tabstrip {
+    background-color: #B4C3CF;
+    border-color: transparent;
+}
+
+    
+
+    .t-tabstrip .t-tabstrip-items li {
+        border-color: transparent;
+    }
+
+    #RecordInfo.t-tabstrip div.panelHeading, 
+    #RecordInfo.t-tabstrip div.panelHeading a, 
+    #RecordInfo.t-tabstrip div.panelHeading span {
+        background-color: white;
+        border-color: transparent;
+        color: #DB7100 !important;
+    }
+        
+    #RecordInfo.t-tabstrip div.panelHeading {
+        border: 0px solid white;
+        border-bottom: 1px solid #888888;
+    }
+/*#TabStrip2.t-tabstrip {
+    margin-top: 2px;
+    padding: 4px 0;
+    border-color: transparent;
+    background-color: #B4C3CF;
+}
+    #TabStrip2.t-tabstrip .t-tabstrip-items .t-state-default {
+        border-color: transparent;
+    }
+        #TabStrip2.t-tabstrip .t-tabstrip-items li.t-item a {
+            font-family: Helvetica,​Verdana,​Sans-Serif;
+            font-size: 16px;
+        }
+    #TabStrip2.t-tabstrip div.panelHeading {
+        background-color: white;
+        border-bottom: 1px solid #888888;
+        color: #DB7100;
+    }*/
+
+/* temp rules pulled over from compass for the older markup - CSR */
+/* CompassDocument */
+.uploadWizPanel {
+	margin-top: 12px;
+	padding: 8px 0;
+}
+
+.documentsUploadPanel {
+	margin: 0 60px 20px 0;
+	padding: 10px;
+	background-color: White;
+	border: solid 1px #333;
+}
+
+.documentsSummaryPanel {
+	margin: 0 60px 0 0;
+	padding: 10px;
+	background-color: White;
+	border: solid 1px #333;
+}
+
+.docOptions {
+	float: right;	
+}
+
+    .docOptions img {
+	border: 0;	
+}
+
+.docMarker {
+	border: 0;
+	position: relative;
+	top: 2px;
+	left: 0;
+	margin-right: 4px;
+}
+/*end CompassDocument*/ em.aspx, EditFinancialItem.aspx, DeleteFinancialItem.aspx */
+/* CompassTask */
+.taskFilterPanel {
+	margin: 40px 0 10px 20px;
+	line-height: 150%;
+}
+
+.taskSummaryItem {
+	margin-top: 10px;
+	padding: 4px;
+	border-top: solid 1px #333;
+	background-color: #fefefe;
+}
+
+.taskOptions {
+	float: right;
+}
+
+    .taskOptions img {
+	border: 0;
+	margin-left: 6px;	
+}
+
+taskOptions a {
+	margin-left: 6px;	
+}
+
+.taskIcon {
+	float: left;
+	margin-right: 6px;
+}
+
+.taskSummaryDescription {
+	padding: 4px;
+	margin-top: 10px;
+}
+
+.userTaskAddPanel {
+	float: right;
+	margin-top: 4px;
+	color: White;
+}
+
+    .userTaskAddPanel a {
+	color: white;	
+}
+
+    .userTaskAddPanel img {
+	border: 0;
+	position: relative;
+	top: 3px;
+	right: 0;
+	margin-left: 4px;
+}
+
+.caseDetailLink {
+	clear: right;
+	float: right;
+}
+
+.searchPanel {
+    margin: -4px -4px -8px -4px;
+	padding: 4px;
+	color: #444;
+	background-color: #b3c6d5;
+}
+
+    .searchPanel .searchParameters .searchParamFloatLeft {
+	float: left;
+	margin-right: 20px;
+    line-height: 150%;
+}
+
+.searchPanel .searchParameters .searchParamFloatLeft, .searchPanel .searchParamText {
+    color: #767676;
+}
+
+    .searchPanel .searchParamText {
+	padding-top: 8px;
+	clear: left;
+}
+
+/* end CompassTask */
+
+/* CompassUser */
+.userOptions {
+    margin: 4px 4px 12px 4px;
+}
+
+    .userOptions .idNumbers > div {
+	margin-bottom: 8px;
+}
+
+    .userOptions .address {
+	clear: both;
+    overflow: auto;
+	padding: 4px 0;
+}
+
+        .userOptions .address > div {
+    float: left;
+    width: 25%;
+	margin: 20px 20px 0 0;
+}
+/* end CompassUser */
+
+/* referral */
+
+#itemSearchParametersPanel {
+    overflow: hidden;
+}
+
+    #itemSearchParametersPanel .itemSearch_parameters form {
+        overflow: auto;
+    }
+
+/*#requestList{
+    overflow-y: auto;
+}*/
+
+#referralDetails, #referralList, #requestList, #serviceRequestDetails {
+    height: 50%;
+    overflow: hidden;
+}
+
+    #referralDetails .panelInnerScrollBody, #referralList .panelInnerScrollBody, #requestList .panelInnerScrollBody, #serviceRequestDetails .panelInnerScrollBody {
+        overflow-y: auto;
+        padding-left: 10px;
+        /*background-color: #EFEFEF;*/
+    }
+
+    #referralDetails .actionPanel, #referralList .actionPanel, #requestList .actionPanel, #serviceRequestDetails .actionPanel {
+        margin-top: 0;
+    }
+
+
+/* the main wrap for the referral summary view*/
+.referralSummaryWrap {
+    height: 100%;
+    overflow: auto;
+}
+    /* each column is floated left with half width*/
+    .referralSummaryWrap .referralSummaryLeftCol, .referralSummaryWrap .referralSummaryRightCol {
+        float: left;
+        width: 48%;
+    }
+    /* custom rules for the action panel on the referral summary view*/
+    .referralSummaryWrap .actionPanel {
+        text-align: right;
+    }
+
+/*the panel that wraps each of the item panels within the view*/
+.referralSummaryPanel {
+    margin: 0 0 2.5em;
+}
+    /* base headline rules for panel headers*/
+    .referralSummaryPanel h3 {
+        margin: 0 0 .65em 0;
+        padding: 0 0 0 20px;
+        font-size: 1.4em;
+        font-weight: bold;
+        color: orange;
+    }
+        /* changes to the headline for 'complete' state*/
+        .referralSummaryPanel h3.referralSectionComplete {
+            background: url('../images/icons/complete_padded.png') center left no-repeat;
+        }
+        /* changes to the headline for 'incomplete' state*/
+        .referralSummaryPanel h3.referralSectionIncomplete {
+            background: url('../images/icons/incomplete_padded.png') center left no-repeat;
+        }
+    /* rules for smaller headlines used in right hand column*/
+    .referralSummaryPanel h4 {
+        margin: 0 0 .65em 20px;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: orange;
+        padding: 0;
+    }
+    /* standardize content containers*/
+    /*.referralSummaryPanel ul, .referralSummaryPanel p {
+        margin: 0 0 0 20px;
+        padding: 0;
+        line-height: 1.45em;
+    }*/
+    .referralSummaryPanel > div, .referalSummaryPanel > div ul, .referalSummaryPanel > div p {
+        margin: 0 0 0 20px;
+        padding: 0;
+        line-height: 1.45em;
+    }
+    /* rules for the survey blurb panel*/
+    .referralSummaryPanel .referralSurveyBlurbPanel {
+        margin: 1.4em 0 1.4em 20px;
+    }
+
+/* large panel at hte bottom of the right col*/
+.referralSummaryDetailsPanel {
+    padding: 10px;
+    border: solid 1px #ccc;
+}
+    /* move to the right to make room for big checkmark graphic in bg */
+    .referralSummaryDetailsPanel ul {
+        /*margin-left: 50px;*/
+    }
+
+        .referralSummaryDetailsPanel ul li {
+            overflow: auto;
+            margin-bottom: 1em;
+            line-height: 1.5em;
+        }
+            /* field headers should be stacked/aligned right and bold */
+            .referralSummaryDetailsPanel ul li .referralSummaryCompleteDetailsPanelFieldHeader {
+                width: 30%;
+                float: left;
+                margin-right: 1em;
+                text-align: right;
+                font-weight: bold;
+            }
+
+.referralSummaryCompleteDetailsPanel {
+    background: url('../images/icons/checkmark_medium.png') 1em 50% no-repeat;
+}
+
+.personDetailsSummary {
+    margin-left: 20px;
+    line-height: 150%;
+}
+
+table.callActivityAnnotations tr {
+    line-height: 150%;
+    border-bottom: solid 1px #ccc;
+}
+
+table.callActivityAnnotations td {
+    padding: 4px;
+}
+
+    table.callActivityAnnotations td.annotationLabel {
+        text-align: right;
+        font-weight: bold;
+    }
+
+.callActivityInformation {
+    line-height: 150%;
+}
+
+    .callActivityInformation td {
+        padding: 4px;
+    }
+
+        .callActivityInformation td.label {
+            text-align: right;
+            font-weight: bold;
+        }
+
+.callActivityPanel {
+    padding: 4px;
+    overflow: hidden;
+}
+
+    .callActivityPanel span.callActivityNoData {
+        font-size: .9em !important;
+        font-weight: normal !important;
+    }
+
+    .callActivityPanel > div, .callActivityPanel > form {
+        width: 33%;
+        float: left;
+    }
+
+    .callActivityPanel > .callPersonDetails > .callTimers, .callActivityPanel .personDetailsWrap, #callCenterRunningTimer {
+        padding: .125em .175em;
+        border-radius: 3px;
+        font-weight: bold;
+    }
+
+    .callActivityPanel > .callPersonDetails > .callTimers {
+        float: right;
+        font-size: .9em;
+    }
+
+    .callActivityPanel .personDetailsWrap {
+        float: left;
+        margin-right: .25em;
+        overflow: auto;
+        min-width: 75px;
+    }
+
+        .callActivityPanel .personDetailsWrap .personDetails {
+            float: left;
+            margin-right: 1ex;
+        }
+
+    .callActivityPanel > .callNavigationActionPanel {
+        text-align: right;
+    }
+
+    #callCenterRunningTimer {
+        float: right;
+        font-size: .9em;
+    }
+
+.referralStartCall.vertical-offset {
+    top: 15% !important;
+}
+
+.callActivityPersonForm > form .actionPanel {
+    display: none;
+}
+
+/* view-specific overrides*/
+body.itemDetails #colCenter {
+    overflow-x: hidden;
+}
+
+body.itemDetails .recordTable .panelBody {
+    width: 99%;
+    overflow-x: auto;
+}
+
+div#breadCrumbMenu {
+	/*
+	height: 3em;
+	margin: -8px 10px -8px 2px;
+	*/
+	margin-top: 0px;
+	/*margin-bottom: 2px;*/
+	border: 0;	
+	background-color: white;
+    color: Black;
+	padding-top: 2px;
+	padding-bottom: 3px;
+	/*border-bottom: 3px solid white;/**/
+	/*border-bottom: 1px solid #8099ad;/**/
+	/*position: relative;/**/
+	/*top: -3px;/**/
+    min-height: 2px;
+}
+
+
+span#breadCrumbCommands
+{
+    /*background-color: white;*/
+    
+    float: right;
+    height: 0px;
+    position: relative;
+    top: -24px;
+    display: block;
+    /*background-color: white;*/
+    padding: 0px;
+    margin-right: 4px;
+    background-color: white;
+}
+
+span#breadCrumbCommands a
+{
+    margin: 1px 8px 4px 8px;
+}
+
+div#breadCrumb a {
+    padding: 1px 4px 0px;
+	white-space: nowrap;
+	background-color: white;
+    color: #3e5161;  
+    text-decoration: none; 
+}
+    div#breadCrumb a:hover {
+        color: #db7100;
+    }
+
+
+div#breadCrumb span.Icon{
+    position: relative;
+    top: 4px;
+    margin: 4px;
+}
+
+/* legacy record styles - these are temporary and should be removed once the legacy record code is retired */
+
+
+
+#recordPageDiv.legacyHook {
+    margin-top: -4px;
+}
+
+.recordPaginationBar .pagingButtons > input {
+    position: relative;
+    top: 4px;
+}
+
+a.legacySorted, input.legacySortedIcon {
+    position: relative;
+    top: 4px;
+}
+
+.recordLink > .contentCell > a {
+    overflow: auto;
+    /*padding: 4px;*/
+}
+    /*.recordLink > .contentCell > a > * {
+        display: block;
+        float: left;
+    }*/
+    .recordLink > .contentCell > a:hover > *, .recordLink > .contentCell > a:hover > .Block > .info {
+        color: #db7100;
+    }
+    /*.recordLink > .contentCell > a > .Icon {
+        margin-right: 4px;
+    }*/
+    .recordLink > .contentCell > a > .Block > .info {
+        color: grey;
+    }
+
+.TileFrame {
+    overflow: auto;
+    padding: 3px 0;
+}
+
+    .TileFrame > .Tile a:hover {
+        color: #db7100;
+    }
+
+    .TileFrame > .Tile > a {
+        display: block;
+        position: relative;
+    }
+
+        .TileFrame > .Tile > a:hover {
+            color: #DB7100;
+        }
+
+    .TileFrame span.Icon {
+        float: left;
+    }
+
+    .TileFrame span.Block {
+        display: block;
+        margin-left: 34px;
+    }
+
+/* end legacy record styles */
+
+/*ds*/
+#colLeft .panelBody .panelHeading,
+#colLeft .panelBody .panelHeading div.CommandBar,
+#colLeft .panelBody .panelHeading div.CommandBar > a > span {
+    background-color: white;
+    color: #DB7100;
+}
+
+#colLeft .panelBody .panelHeading div.CommandBar span.Commands,
+    .panelHeading div.CommandBar span.Commands {
+    float: right;
+}
+
+span.MapLink span.Icon {
+    padding: 0px 0px 0px 20px;
+    margin: 0px;
+}
+
+span.MapLink span.Block {
+    padding: 0px 0px 0px 40px;
+    margin: 2px;
+}
+/*ds*/
+
+.eligibilityResults {
+    line-height: 135%;
+}
+
+.matchResultPanel {
+    margin: 8px 0 12px 20px;
+}
+
+h4 {
+    color: #DB7100;
+    font-size: 1.2em;
+    margin-bottom: 2px;
+    padding: 4px;
+    font-weight: 500;
+}
+
+
+/* new tiling classes */
+.tile_partial {
+    float: left;
+    padding: 4px;
+    /*width: 33.2%;*/
+}
+
+.record-display .tile_partial .editor-label {
+    width: 170px;
+}
+
+.record-display .tile_partial.address {
+    width: 345px;
+}
+
+.record-display .tile_partial.phone {
+    width: 345px;
+}
+
+.tile_full {
+    float: left;
+    /*width: 66.5%;*/
+    width: 950px;
+}
+
+.record-display .tile_full
+{
+    width: 750px;
+}
+
+.tile_full .record_delete_warning {
+    padding: 5px;
+    background-color: #E49B3C;
+        color: white;
+    font-weight: bold;
+    font-size: 90%;
+    visibility: visible;
+}
+
+.tile_full .record_delete_warning_off {
+    visibility: hidden;
+}
+
+.tile_partial.panelBorder, .tile_full.panelBorder {
+    clear: none;
+}
+
+/* this style causing tiles to wrap when second child (address or phone) is added */
+
+    /*.tile_full .tile_partial {
+        width: 50%;
+    }*/
+
+/*.propertyGroupContainer {
+    overflow: auto;
+}
+    .propertyGroupContainer .propertyGroup {
+        float: left;
+        min-width: 300px!important;
+    }
+    .propertyGroupContainer .propertyGroup.defaultPropertyGroup {
+        width: auto;
+        float: none;
+    }*/
+
+.recordPageAgentModels {
+    padding-left: 25px;
+    /*overflow: hidden;*/
+    /*margin-left: 475px;*/
+}
+
+#clientContent .recordPageAgentModels
+{
+    margin-left: 425px;
+}
+
+.tile_fullheight {
+    /*min-width: 300px;*/
+    margin-bottom: 10px;
+}
+
+/* use this when panelBody is combined with noPadding, but scrollable container needs padding - Scott */
+.panelInnerScrollBody .scrollContainer {
+    padding: 4px;
+}
+
+.splitter-pane-single .panelInnerScrollBody
+{
+    overflow: auto;
+}
+
+#clientContent
+{
+    color: #767676;
+}
+
+/* mimic style applied to #colCenter default for special #clientContent div (i.e. non-splitter implmentation of contact/client view) - Scott
+*/
+#clientContent.recordPageSummary .panelBody .panelHeading {
+    background-color: White;
+    color: #DB7100;
+    background-color: #B4C3CF;
+    color: White; 
+    color: #666666;
+    border-bottom: 1px solid #888888;
+}
+
+#clientContent.recordPageSummary .panelBody .panelHeading.subHeading {
+    background-color: White;
+    color: #DB7100;
+    border: 1px solid white;
+    border-bottom: 1px solid #888888;
+}
+
+#clientContent .panelHeading{
+    margin-bottom: 0px;
+}
+
+#clientContent .panelInstruction {
+    margin-bottom: 2px;
+}
+
+#licenseAgreement{
+    margin: 15px;
+}
+
+input.userName
+{
+    width: 250px;
+}
+
+#licenseAgreement h1
+{
+    font-weight: bold;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+#licenseAgreement .level1Heading  {
+    font-weight: bold;
+}
+
+#licenseAgreement .level1Content
+{
+    padding-left: 25px;
+    text-indent: -25px;
+    margin-top: 8px;
+    line-height: 1.5em;
+}
+
+#licenseAgreement h2
+{
+    font-weight: normal;
+    padding-left: 25px;
+    line-height: 1.5em;
+    margin-bottom: 8px;
+}
+#licenseAgreement h3
+{
+    padding-left: 50px;
+    font-weight: normal;
+    line-height: 1.5em;
+    margin-bottom: 8px;
+}
+
+#metricTree{
+    height: 100%;
+    overflow-y: hidden;
+}
+
+#metricTree .panelInnerScrollBody {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-left: 10px;
+}
+
+#metricTree .actionPanel{
+
+}
+
+#metricTree .actionPanelWrapper {
+    margin-top: 0px;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    height: 54px;
+}

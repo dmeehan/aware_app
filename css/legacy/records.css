@@ -1,0 +1,60 @@
+﻿/* turns on images in the Index panel (generally rendered on the right side) */
+.legacyRecordIndexPanel .recordIndexItem ul.commandBar li a span.Icon img {
+    visibility: visible;
+    opacity: .75;
+}
+.legacyRecordIndexPanel .recordIndexItem ul.commandBar li a:hover span.Icon img {
+    opacity: 1;
+}
+.legacyRecordContextPanel div.CommandBar span.Commands,
+.legacyRecordIndexPanel div.CommandBar span.Commands {
+    float: right;
+}
+
+#colLeft .legacyContextDiv .panelHeading {
+    background-color: white;
+}
+#colLeft .legacyContextDiv .panelHeading a span.Block {
+    color: #DB7100;
+}
+.legacyContextDiv .panelHeading span.Icon img, .legacyItemSummary .panelHeading span.Icon img {
+    visibility: visible;
+}
+.legacyContextDiv ul.recordLink li.commands, .legacyItemSummary ul.recordLink li.commands {
+    visibility: hidden;
+    position: relative;
+    top: -.5em;
+}
+.legacyContextDiv ul.recordLink li.commands a, .legacyItemSummary ul.recordLink li.commands a {
+    margin-left: 4px;
+}
+.legacyContextDiv ul.recordLink:hover li.commands, .legacyItemSummary ul.recordLink:hover li.commands {
+    visibility: visible;
+}
+.legacyContextDiv .panelInfo {
+    font-style: italic;
+}
+
+
+.legacyItemDelete .actionPanel, .legacyItemEdit .actionPanel, .legacyItemCreate .actionPanel {
+    margin: 2px 4px 0 4px;
+}
+
+#top #ProgressTree,
+#subMenu #ProgressTree
+{
+    background-color: white;
+    padding-top: 7px;
+}
+
+#top #ProgressTree ul,
+#subMenu #ProgressTree ul
+{
+   
+}
+
+#top #ProgressTree ul li,
+#subMenu #ProgressTree ul li
+{
+    display: inline-block;
+}

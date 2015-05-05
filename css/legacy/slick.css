@@ -1,0 +1,375 @@
+﻿
+
+html, body 
+{
+	height: 100%;
+	overflow:auto;
+	/*margin-left: 6px;
+	margin-right: 6px;/**/
+}
+
+#wrap 
+{
+	min-height: 100%;
+}
+
+#header 
+{
+
+padding: 0px;
+margin: 0px;
+
+}
+
+#main 
+{
+	/*overflow:auto;/**/
+	/*padding-bottom: 60px;*/
+	width: 100%;
+	background-color: White;
+	}  /* must be same height as the footer */
+
+#footer {position: relative;
+	margin-top: -61px; /* negative value of footer height */
+	height: 60px;
+	clear:both;} 
+
+/*Opera Fix*/
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;
+}
+
+body 
+{
+    font-family: Helvetica, Verdana, Sans-Serif;
+    background-color: #8099AD;
+
+}
+
+#footer
+{
+	background-color: #777777;
+	color: White;
+	padding-top: 1px;
+} 
+
+#footer a
+{
+	color: White;
+	text-decoration: none;
+}
+
+#footer a:hover
+{
+	color: White;
+	/*text-decoration: Underline;/**/
+}
+
+#header
+{
+	color: White;
+	/*height: 100px;/**/
+	border-bottom: 2px solid #8099AD;
+    border-bottom: 2px solid #777777;
+} 
+
+#actions
+{
+	/*padding: 4px;/**/
+	height: 44px;
+	overflow: hidden;
+	margin-bottom: 2px;
+}
+
+#copyright
+{
+	display: inline;
+	margin-left: 8px;
+	font-size: 10px;
+}
+
+#legal
+{
+	display: inline;
+	float: right;
+	margin-right: 8px;
+	font-size: 10px;
+}
+
+#copyright a,
+#legal a
+{
+	color: #999999;
+}
+
+#save
+{
+	display: inline-block;
+	height: 38px;
+}
+
+span.commands
+{
+	font-style: normal;
+	display: inline-block;
+	float: right;
+	font-size: 16px;
+}
+
+span.commands a
+{
+	color: #3E5161;
+	text-decoration: none;
+}
+span.commands a:hover
+{
+	color: #E49B3C;
+	color: black;
+	text-decoration: none;
+}
+
+
+#pageHeader
+{
+	color: White;	
+	border-bottom: 3px solid #E49B3C;
+	height: 92px;/**/
+	height: 74px;/**/
+	overflow: hidden;
+	padding-top: 2px;
+}
+
+#pageBanner {
+    background: url('../images/site/clara.header_bg.png') left bottom repeat-x #8099ad;
+}
+
+div#pageBanner a img
+{
+	border: 0px solid black;
+	padding: 0px;
+	margin: 0px;
+}
+
+#userPanel
+{
+	float: right;
+	padding: 8px;
+	position: relative;
+	top: -70px;
+	display: inline-block;
+	text-align: right;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#userPanel li
+{
+	/*display: inline-block;/**/
+	padding-top: 3px;
+}
+
+#login,
+#login a,
+#account,
+#account a
+{
+	font-size: 14px;
+	font-weight: normal;
+	color: White;
+	text-decoration: none;
+
+}
+
+#login a:hover,
+#account a:hover
+{
+	text-decoration: underline;
+}
+
+#login li,
+#account li
+{
+	display: inline-block;
+
+}
+#contentContainer {
+  padding-left: 200px;   /* LC width */
+  padding-right: 150px;  /* RC width */
+}
+#contentContainer .column {
+  position: relative;
+  float: left;
+}
+#centerContent 
+{
+  width: 100%;
+}
+#leftContent 
+{
+  width: 200px;          /* LC width */
+  right: 200px;          /* LC width */
+  margin-left: -100%;/**/
+  min-width: 200px;
+  background-color: Green;
+  overflow: auto;
+  height: 100%
+}
+#rightContent {
+  width: 150px;          /* RC width */
+  margin-right: -150px;  /* RC width */
+  background-color: Red;
+  overflow: auto;
+  height: 100%
+}
+#bottomContent {
+  clear: both;
+}
+
+
+
+
+#mainContent
+{
+	/*display:inline-block;/**/
+	margin-top: 0px;
+	padding-top: 0px;
+	height: 100%;/**/
+	height: 0px;
+	/*min-height: 200px;/**/
+	/*height: 200px;/**/
+	width: 100%;
+	overflow: auto;/**/
+	background-color: White;
+}
+
+
+
+div#mainMenu, 
+div#subMenu, 
+div#pageMenu 
+{
+    background-color: white;
+    color: White;
+    padding: 0px 0px 0px 0px;
+	width: 100%;
+    border: 0px;
+}
+
+
+
+div#mainMenu nav
+{
+    background-color: #D9D6C5;
+    border-bottom: 3px solid white;
+    border-top: 3px solid #D9D6C5;
+}
+
+div#subMenu nav
+{
+    background-color: #D9D6C5;
+    border-bottom: 3px solid white;
+    border-top: 3px solid #D9D6C5;
+}
+
+
+div#mainMenu ul, 
+div#subMenu ul, 
+div#pageMenu ul {
+    background-color: #D9D6C5;
+    background-color: Transparent;
+    display: inline;
+    line-height: 26px;
+    margin-left: 4px;
+    padding-left: 0;
+    overflow: hidden;
+   
+   
+}
+
+div#mainMenu UL LI, 
+div#subMenu UL LI, 
+div#pageMenu UL LI 
+{
+	background-color: Transparent;
+	padding: 0px;
+	margin: 0px;
+	display: inline;
+	overflow: hidden;
+	
+}
+
+div#mainMenu UL LI A, 
+div#subMenu UL LI A, 
+div#pageMenu UL LI A 
+{
+    background-color: Transparent;
+    border: 0 none;
+    color: #3E5161;
+    display: block;
+    /*font-size: 1.2em/**/
+    font-weight: normal;
+    font-size: 16px;
+    padding: 0px 6px 0px 6px;
+    text-decoration: none;
+    vertical-align: top;
+    display: inline-block;
+    
+}
+
+/*div#subMenu UL LI A:hover
+{
+    border-bottom: 2px solid #E49B3C;
+}*/
+
+     
+
+DIV#mainMenu UL LI A.active, 
+DIV#subMenu UL LI A.active, 
+DIV#pageMenu UL LI A.active 
+{
+    background-color: White;
+
+	/*border-top-left-radius: 3px;
+	border-top-right-radius: 3px;*/
+    
+}
+
+/*DIV#subMenu UL LI A.active 
+{
+    border-bottom: 2px solid #777777;
+}*/
+
+
+
+.input-validation-error
+{
+	background-color: #FFFFCC;	
+}
+
+.label-wrapper
+{
+	display: inline;
+}
+
+.field-wrapper
+{
+	display: inline;
+}
+
+.validation-wrapper1
+{
+	display: inline;
+	width: 100%;
+	float: right;
+	background-color: Blue;	
+	text-align: left;
+}
+
+
+
+
+

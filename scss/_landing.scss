@@ -1,0 +1,68 @@
+.landing-info {
+	  $side-image-background-top: $light-blue;
+	  $side-image-background-bottom: $tan;
+	  $side-image-border: 1px solid darken(transparentize($side-image-background-bottom, .8), 30);
+	  @include outer-container;
+	  background: lighten($tan, 25);
+
+	  @include media($large-screen) {
+	    @include row(table);
+	  }
+
+	  .image {
+	    @include background(url('../images/banner.png'), linear-gradient($side-image-background-top, $side-image-background-bottom), no-repeat $side-image-background-top scroll);
+	    background-color: $side-image-background-top;
+	    //border-bottom: $side-image-border;
+	    background-size: cover;
+	    display: block;
+	    min-height: 12em;
+	    padding: 3em;
+
+	    position: relative;
+
+	    img {
+	    	position: absolute;
+	    	bottom: 0;
+	    	height: 100%;
+	    }
+
+	    @include media($large-screen) {
+	      @include span-columns(3);
+	      background-position: bottom;
+	      background-size: cover;
+	      border-right: $side-image-border;
+	    }
+	  }
+
+	  .content {
+	    @include span-columns(12);
+	    padding: 1em 1em 4em 1em;
+
+	    @include media($large-screen) {
+	      @include span-columns(9);
+	      padding: 2em 4em;
+	    }
+	  }
+
+	  .content h1 {
+	    margin-bottom: .9em;
+	  }
+
+	  .content p,
+	  .content ul {
+	    color: gray;
+	  }
+
+	  .content ul {
+	  	list-style-type: disc;
+    	margin-bottom: $base-spacing / 2;
+    	padding-left: $base-spacing;
+	  }
+
+	  .content button {
+	    @include button(simple, white);
+	    font-size: $base-font-size;
+	    outline: none;
+	  }
+	  @include reset-display();
+	}

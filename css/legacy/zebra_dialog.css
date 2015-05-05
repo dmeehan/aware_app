@@ -1,0 +1,65 @@
+.ZebraDialog {
+    font-size: 12px;
+    background: #FFF;
+    padding: 0px;
+    width: 350px;
+    color: #222;
+    -webkit-box-shadow: 0px 0px 4px 2px #222;
+    -moz-box-shadow: 0px 0px 4px 2px #222;
+    box-shadow: 0px 0px 4px 2px #222;
+    *border: 1px solid #666;    /* IE6 & 7 */
+    border: 1px solid #666\9;   /* IE8 */
+}
+
+.ZebraDialog .ZebraDialog_Title {
+    margin: 0;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #FFF;
+    text-align: left;
+    *padding: 7px 10px;     /* IE6 & 7 */
+    padding: 7px 10px\9;    /* IE8 */
+}
+
+.ZebraDialog_Title 
+{
+    font-size: 17px!important;
+    background-color: #8099AD;
+}
+
+.ZebraDialog .ZebraDialog_Body              { background-repeat: no-repeat; background-position: 10px 10px; padding: 10px; text-align: left; line-height: 135%; }
+
+.ZebraDialog .ZebraDialog_Icon              { padding: 10px 10px 10px 68px; min-height: 48px; _height: 48px }
+
+.ZebraDialog .ZebraDialog_Confirmation      { background-image: url('../images/modal/confirmation.png') }
+.ZebraDialog .ZebraDialog_Error             { background-image: url('../images/modal/error.png') }
+.ZebraDialog .ZebraDialog_Information       { background-image: url('../images/modal/information.png') }
+.ZebraDialog .ZebraDialog_Question          { background-image: url('../images/modal/question.png') }
+.ZebraDialog .ZebraDialog_Warning           { background-image: url('../images/modal/warning.png') }
+
+.ZebraDialog .ZebraDialog_Buttons 
+{
+    margin: 10px 4px;
+}
+
+.ZebraDialog .ZebraDialog_Buttons a {
+    float: right;
+    min-width: 60px;
+    margin: 2px 4px 2px 0;
+    padding: 6px 4px;
+	font: bold 1.167em "Trebuchet MS" , Arial, helvetica, Sans-Serif;
+	font-size: 10pt;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+    /*background: url("../Images/Site/bg_button_orange.gif") repeat-x scroll left bottom transparent;*/
+    background-color: #E49B3C;
+	border-top: solid 2px #ffcc90;
+	border-left: solid 2px #ffcc90;
+	border-bottom: solid 2px #996a32;
+	border-right: solid 2px #996a32;	
+	cursor: pointer;
+}
+
+.ZebraDialogOverlay                         { background: #666 }

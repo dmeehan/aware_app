@@ -1,0 +1,449 @@
+/*
+	HORIZONTAL (SIDE-BY-SIDE) LAYOUT (DEFAULT)
+*/
+/* OVERALL CONTAINMENT RULES */
+/* basic form class that will enable these rules to be applied */
+.record-form { 
+	display: table;
+	width: 100%;
+    background-color: #EFEFEF;
+	border-width: 1px;
+    padding: 0px;
+}
+
+.record-form .panelBorder,
+.record-form .panelBody
+{
+    padding: 0px;
+    margin: 0px;
+}
+
+.panelBody.scrollHorizontal{
+    overflow-x: auto;
+}
+
+.record-display
+{
+    background-color: white;
+}
+
+
+    /* need white background color for form used in ServiceRequests primary search panel */
+    #searchForm.term-search .editor-wrapper {
+        background-color: white;
+    }
+
+    .record-display .editor-label
+    {
+        color: #db7100;
+        font-weight: normal;
+    }
+
+ 	/* container element that wraps the label and input to control how they render compared to each other */
+	.record-form .editor-wrapper { 
+		display: table-row;
+		margin-bottom: 2px;
+		background-color: #EFEFEF;
+	}
+
+    .record-form .display-wrapper {
+        display: table-row;
+    }
+
+	.record-form .editor-wrapper > div {
+		/*float: left;*/
+		display: table-cell;
+		padding: 8px 0;
+		/*line-height: 150%; - move to .editor-label*/
+        vertical-align: top; 
+	}
+
+    .record-form .display-wrapper > div {
+        display: table-cell;
+        padding: 8px 0;
+    }
+
+	/* label wrapper */
+	.record-form .editor-wrapper .editor-label { 
+		min-width: 150px; 
+		text-align: right;  
+        /*line-height: 150%; - used to be in ".record-form .editor-wrapper > div", due to resulting alignment issues with readonly field values, need to remove here as well*/
+	}
+
+    .record-form .display-wrapper .editor-label {
+        text-align: right;
+        min-width: 150px;
+    }
+
+    .record-form .editor-wrapper .editor-field .editor-input { 
+		padding-left: 4px;
+	}
+
+    .record-form .display-wrapper .editor-field .editor-input {
+        padding-left: 8px;
+        color: black;
+    }
+
+    /* .editor-input container provides box for validation mark - Scott */
+    .record-form .editor-wrapper .editor-field .editor-input {
+        border-left: solid 3px transparent;
+        min-height: 20px;  
+            
+    }
+
+	/* rule for input wrapper elements that contain an input with a 'required' rule */
+	.record-form .editor-wrapper.input-required .editor-field .editor-input { 			
+        border-color: #E49B3C;
+        /*background-color:red;*/
+	}
+
+    .record-form .editor-wrapper .editor-field .editor-input input[readonly="readonly"] {
+        background-color: transparent;
+        color: #767676;
+    }
+
+	/* this element is only output for composite controls that contain multiple editor-wrapper elements that need to have special arrangements - it will be accompanied by a class that specifies the actual template type */
+	.record-form .editor-template { 	
+	}
+		/* blanket rules for wrappers that live inside of a template */
+		.record-form .editor-template .editor-wrapper {
+		}
+
+        .record-form .actionPanel { 
+			/*padding: 0px;*/
+            margin: 0px;
+		}
+
+	/* any elements that contain buttons or links, and not input controls needs to be assigned this class */
+	.record-form .actions { 
+		padding: 4px 8px;
+		color: #3E5161;
+		font-style: italic;
+		background-color: #B4C3CF;
+	}
+		.record-form .actions img.arrows {
+			position: relative;
+			top: 3px;
+			margin-right: 4px;
+		}
+
+
+/* SPECIFIC TEMPLATE-RELATED RULES */
+	.record-form .editor-template.Clara_ViewClientOverviewRecord {
+	}
+
+	.record-form .editor-template.Clara_ClientRecordAndContactRecordAndPersonRecord {
+	}
+
+	.record-form .editor-template.Clara_ContactPersonRecordAndContactRecordAndPersonRecord {
+	}
+
+	.record-form .editor-template.Clara_HouseholdRecord {
+	}
+
+	.record-form .editor-template.Clara_HouseholdRecordAndAddressRecord {
+	}
+
+	.record-form .editor-template.Clara_PersonActivityRecordAndPersonRecordAndActivityRecord {
+	}
+
+	.record-form .editor-template.Clara_PersonRelationshipRecord {
+	}
+
+	.record-form .editor-template.General_ContactAddressRecordAndAddressRecord {
+	}
+
+	.record-form .editor-template.General_ContactEmailRecordAndEmailRecord {
+	}
+
+	.record-form .editor-template.General_ContactPhoneRecordAndPhoneRecord {
+	}
+
+	.record-form .editor-template.PersonContactInfoFormViewModel {
+	}
+
+	.record-form .editor-template.PersonFormViewModel {
+	}
+
+	.record-form .editor-template.Record {
+	}
+
+	.record-form .editor-template.RecordAgentModel {
+	}
+
+	.record-form .editor-template.RecordPageAgentModel {
+	}
+
+	.record-form .editor.template.RecordPageAgentModelAddress {
+	}
+
+	.record-form .editor-template.RecordPageAgentModelEmail {
+	}
+
+	.record-form .editor-template.RecordPageAgentModelPhone {
+	}
+
+	.record-form .editor-template.SurveyQuestion {
+	}
+
+
+/* SPECIFIC CONTROL-RELATED RULES */
+	.record-form .editor-wrapper.label {
+	}
+
+	.record-form .editor-wrapper.instruction {
+	}
+
+	.record-form .editor-wrapper.label-lookup {
+	}
+
+	.record-form .editor-wrapper.textbox {
+	}
+
+	.record-form .editor-wrapper.textarea {
+	}
+		.record-form .editor-wrapper.textarea textarea {
+			width: 96%;
+            min-width: 75px;
+			height: 5em;
+		}
+    .record-form .tile_partial .display-wrapper.textarea .textarea {
+        max-width: 125px;
+    }
+
+	.record-form .editor-wrapper.checkbox {
+	}
+		.record-form .editor-wrapper.checkbox input[type='checkbox'] {
+			margin-right: .5em;
+		}
+
+	.record-form .editor-wrapper.checkboxlist {
+	}
+		.record-form .editor-wrapper.checkboxlist ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+			.record-form .editor-wrapper.checkboxlist ul li {
+				margin-bottom: .6em;
+			}
+				.record-form .editor-wrapper.checkboxlist ul li > input[type='checkbox'] {
+					margin-right: .5em;
+				}
+
+	.record-form .editor-wrapper.radio {
+	}
+
+	.record-form .editor-wrapper.radiolist {
+	}
+		.record-form .editor-wrapper.radiolist ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+			.record-form .editor-wrapper.radiolist ul li {
+				margin-bottom: .6em;
+			}
+				.record-form .editor-wrapper.radiolist ul li > input[type='radio'] {
+					margin-right: .5em;
+				}
+
+	.record-form .editor-wrapper.radiogroup {
+	}
+		.record-form .editor-wrapper.radiogroup ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+			.record-form .editor-wrapper.radiogroup ul li {
+				display: inline-block;
+				margin-right: 2em;
+			}
+				.record-form .editor-wrapper.radiogroup ul li > input[type='radio'] {
+					margin-right: .5em;
+				}
+
+	.record-form .editor-wrapper.grid-foreignkey {
+	}
+
+	.record-form .editor-wrapper.select {
+	}
+
+	.record-form .editor-wrapper.select-input {
+	}
+            .record-form .editor-wrapper.select-input .editor-field div.t-dropdown {
+                width: 98%;
+                max-width: 250px;
+            }
+
+	.record-form .editor-wrapper.selectlookup {
+	}
+        .record-form .editor-wrapper.selectlookup .editor-field {
+            white-space: nowrap;
+            /*width: 100%;*/  
+            /*overflow: auto;  -- Scott - editor fields showing scroll bars on resize down*/
+        }
+            .record-form .editor-wrapper.selectlookup .editor-field div.t-dropdown {
+                /*width: 85%; -- Scott - lookup arrow was wrapping to next line */
+                max-width: 250px;
+                float: left;
+            }
+            .record-form .editor-wrapper.selectlookup .editor-field .itemSelectAnchor,
+            .record-form .editor-wrapper.labellookup .editor-field .itemSelectAnchor
+             {
+                display: block;
+                float:left;
+                width: 16px;  /* space must be reserved for 16x16 blue arrow icon*/
+                height: 16px;
+                position: relative;
+                top: 3px;
+                left: 4px;
+                background: url('../images/commands/GoToNextHS.png') top left no-repeat transparent;
+                text-decoration: none;
+            }
+                .record-form .editor-wrapper.selectlookup .editor-field .itemSelectAnchor.modalLoading,
+                .record-form .editor-wrapper.labellookup .editor-field .itemSelectAnchor.modalLoading {
+                    background-image: url('../images/Records_Loading.gif');
+                }
+
+                .record-form .editor-wrapper.selectlookup .editor-field span.lookupValue,
+                .record-form .editor-wrapper.labellookup .editor-field span.lookupValue {
+                    float: left;
+                }
+
+	.record-form .editor-wrapper.date {
+	}
+
+	.record-form .editor-wrapper.datetime {
+	}
+
+	.record-form .editor-wrapper.time {
+	}
+
+	.record-form .editor-wrapper.currency {
+	}
+        .record-form .editor-wrapper.currency input {
+            width: 7em;
+        }
+
+	.record-form .editor-wrapper.enum {
+	}
+
+	.record-form .editor-wrapper.file-upload {
+	}
+
+	.record-form .editor-wrapper.html {
+	}
+	    .record-form .editor-wrapper.html table.t-editor {
+            width: 97%;
+	    }
+	    .record-form .editor-wrapper.html textarea {
+            height: 400px;
+	    }
+
+	.record-form .editor-wrapper.integer {
+	}
+
+	.record-form .editor-wrapper.number {
+	}
+
+
+/*
+	VERTICAL LAYOUT
+*/
+
+
+.record-form.vertical {
+    display: block;
+}
+
+	/* container element that wraps the label and input to control how they render compared to each other */
+	.record-form.vertical .editor-wrapper { 
+        display: block;
+	}
+		/* blanket rules to wrapper children */
+		.record-form.vertical .editor-wrapper > div {
+            display: block;
+			float: none;
+            padding: 4px 0;
+		}
+		/* label wrapper */
+		.record-form.vertical .editor-wrapper .editor-label { 
+            width: auto;
+			margin-bottom: .5em;
+			text-align: left;
+		}
+			.record-form.vertical .editor-wrapper .editor-label label {
+                display: block;
+				padding-left: 4px;
+				border-left: solid 3px transparent;
+				border-right: 0;
+			}
+			/* rule for label wrapper elements that relate to an input with a 'required' rule */
+			.record-form.vertical .editor-wrapper.input-required .editor-label label {
+				border-left-color: #E49B3C;
+			}
+		/* input wrapper */
+		.record-form.vertical .editor-wrapper .editor-field { 
+            padding-left: 8px;
+		}
+			/* rule for input wrapper elements that contain an input with a 'required' rule */
+			.record-form.vertical .editor-wrapper.input-required .editor-field { 			
+			}
+
+	/* this element is only output for composite controls that contain multiple editor-wrapper elements that need to have special arrangements - it will be accompanied by a class that specifies the actual template type */
+	.record-form.vertical .editor-template { 	
+	}
+		/* blanket rules for wrappers that live inside of a template */
+		.record-form.vertical .editor-template .editor-wrapper {
+		}
+
+	/* any elements that contain buttons or links, and not input controls needs to be assigned this class */
+	.record-form.vertical .actions { 	
+	}  
+    
+ .record-form.vertical .t-dropdown
+{
+    float: none;
+}  
+     
+  
+
+/* SPECIFIC TEMPLATE-RELATED RULES */
+
+
+/* SPECIFIC CONTROL-RELATED RULES */
+	.record-form.vertical .editor-wrapper.radiogroup .editor-field ul li {
+		display: block;
+		margin-bottom: .6em;
+	}
+
+	.record-form.vertical .editor-wrapper.select-input {
+        padding-bottom: .5em;
+	}
+
+	.record-form.vertical .editor-wrapper.selectlookup {
+        padding-bottom: .5em;
+	}
+	    .record-form.vertical .editor-wrapper.selectlookup .editor-field {
+            overflow: hidden;
+	    }
+
+	.record-form.vertical .editor-wrapper.html {
+	}
+	    .record-form.vertical .editor-wrapper.html table.t-editor {
+            width: 98%;
+	    }
+
+
+/* FORMS-RELATED TELERIK OVERRIDES*/
+    .record-form .t-dropdown {
+        /* height: 1.5em; - might not need this anymore - Scott */ 
+    }
+    .record-form .t-dropdown .t-input {
+        position: relative;
+        /*top: -3px; - since removed line-height from editor input, no longer need to counter adjust positioning - SCOTT */
+    }
+    .t-widget, .t-input {
+        border-color: #ccc; /* added this to override Telerik DatePicker border color */
+    }

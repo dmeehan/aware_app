@@ -1,0 +1,62 @@
+/* CSR Temp */
+.octaveNote
+{
+    color: Black;
+}
+.octaveNoteStyled
+{
+    /*display: none;*/
+}
+.octaveNoteStyled > a, .octaveNoteStyled > span
+{
+    display: block;
+    width: 200px;
+    padding: 1em;
+    margin: .5em;
+    color: White;
+    font-weight: bold;
+    font-size: 20px;
+}
+#colLeft > .octaveNoteStyled > a, #colLeft > .octaveNoteStyled > span
+{
+    width: 75px;
+}
+#colRight > .octaveNoteStyled > a, #colRight > .octaveNoteStyled > span
+{
+    width: 75px;
+}
+div.octaveNoteStyled.note_Do > a, div.note_Do > span
+{
+    background-color: Red;
+}
+div.octaveNoteStyled.note_Re > a, div.note_Re > span
+{
+    background-color: Orange;
+    color: #111;
+}
+div.octaveNoteStyled.note_Mi > a, div.note_Mi > span
+{
+    background-color: Yellow;
+    color: #333;
+}
+div.octaveNoteStyled.note_Fa > a, div.note_Fa > span
+{
+    background-color: Green;
+}
+div.octaveNoteStyled.note_So > a, div.note_So > span
+{
+    background-color: Blue;
+}
+div.octaveNoteStyled.note_La > a, div.note_La > span
+{
+    background-color: Navy;
+}
+div.octaveNoteStyled.note_Ti > a, div.note_Ti > span
+{
+    background-color: Purple;
+}
+
+div.octaveAction
+{
+    display: none;
+}
