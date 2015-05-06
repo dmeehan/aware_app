@@ -10,6 +10,7 @@
 <script src="js/ui/navigation.js"></script>
 <script src="js/ui/search_tools.js"></script>
 <script src="js/ui/tabs.js"></script>
+<script src="js/ui/expander.js"></script>
 </head>
 <body>
     <header class="navigation" role="banner">
@@ -52,15 +53,204 @@
     </header>
     <section class="container">
       <nav class="chart-controls">
-        <div class="control-menu">
-          <h1>Measures</h1>
+        <div class="control-menu expander">
+          <h1><a href="javascript:void(0)" id=js-expander-trigger" class="expander-trigger expander-hidden">Measures</a></h1>
+          <div id="js-expander-content" class="expander-content">
           <ul class="accordion-tabs-minimal">
             <li class="tab-header-and-content">
               <a href="#" class="tab-link is-active">Population</a>
                 <div class="tab-content">
                   <div class="search-tools">
                     <div class="filter">
-                      <h3>Outcomes</h3>
+                      <h3>Housing</h3>
+                      <div>
+                        <ol>
+                          <li>
+                            <input id="Alternate Feeding Methods Score" type="checkbox">
+                            <label for="Alternate Feeding Methods Score">Alternate Feeding Methods Score</label>
+                          </li>
+                          <li>
+                            <input id="Body Condition Score" type="checkbox">
+                            <label for="Body Condition Score">Body Condition Score</label>
+                          </li>
+                          <li>
+                            <input id="Cyclicity Status" type="checkbox">
+                            <label for="Cyclicity Status">Cyclicity Status</label>
+                          </li>
+                          <li>
+                            <input id="Enrichment Diversity Score" type="checkbox">
+                            <label for="Enrichment Diversity Score">Enrichment Diversity Score</label>
+                          </li>
+                          <li>
+                            <input id="Feeding Diversity Score" type="checkbox">
+                            <label for="Feeding Diversity Score">Feeding Diversity Score</label>
+                          </li>
+                          <li>
+                            <input id="Feeding Schedule Score" type="checkbox">
+                            <label for="Feeding Schedule Score">Feeding Schedule Score</label>
+                          </li>
+                          <li>
+                            <input id="Foot Health Score" type="checkbox">
+                            <label for="Foot Health Score">Foot Health Score</label>
+                          </li>
+                          <li>
+                            <input id="Joint Health" type="checkbox">
+                            <label for="Joint Health">Joint Health Score</label>
+                          </li>
+                          <li>
+                            <input id="Mean Daily Walking Distance (km)" type="checkbox">
+                            <label for="Mean Daily Walking Distance (km)">Mean Daily Walking Distance (km)</label>
+                          </li>
+                           <li>
+                            <input id="Percent Time on Hard Flooring Overall" type="checkbox">
+                            <label for="Percent Time on Hard Flooring Overall">Percent Time on Hard Flooring Overall</label>
+                           </li>
+                        </ol>
+                      </div>
+                    </div>
+                    <div class="filter">
+                      <h3>Flooring</h3>
+                      <div>
+                        <ol>
+                          <li>
+                            <input id="Alternate Feeding Methods Score" type="checkbox">
+                            <label for="Alternate Feeding Methods Score">Alternate Feeding Methods Score</label>
+                          </li>
+                          <li>
+                            <input id="Body Condition Score" type="checkbox">
+                            <label for="Body Condition Score">Body Condition Score</label>
+                          </li>
+                          <li>
+                            <input id="Cyclicity Status" type="checkbox">
+                            <label for="Cyclicity Status">Cyclicity Status</label>
+                          </li>
+                          <li>
+                            <input id="Enrichment Diversity Score" type="checkbox">
+                            <label for="Enrichment Diversity Score">Enrichment Diversity Score</label>
+                          </li>
+                          <li>
+                            <input id="Feeding Diversity Score" type="checkbox">
+                            <label for="Feeding Diversity Score">Feeding Diversity Score</label>
+                          </li>
+                          <li>
+                            <input id="Feeding Schedule Score" type="checkbox">
+                            <label for="Feeding Schedule Score">Feeding Schedule Score</label>
+                          </li>
+                          <li>
+                            <input id="Foot Health Score" type="checkbox">
+                            <label for="Foot Health Score">Foot Health Score</label>
+                          </li>
+                          <li>
+                            <input id="Joint Health" type="checkbox">
+                            <label for="Joint Health">Joint Health Score</label>
+                          </li>
+                          <li>
+                            <input id="Mean Daily Walking Distance (km)" type="checkbox">
+                            <label for="Mean Daily Walking Distance (km)">Mean Daily Walking Distance (km)</label>
+                          </li>
+                           <li>
+                            <input id="Percent Time on Hard Flooring Overall" type="checkbox">
+                            <label for="Percent Time on Hard Flooring Overall">Percent Time on Hard Flooring Overall</label>
+                           </li>
+                        </ol>
+                      </div>
+                    </div>
+                    <div class="filter">
+                      <h3>Social</h3>
+                      <div>
+                        <ol>
+                          <li>
+                            <input id="Alternate Feeding Methods Score" type="checkbox">
+                            <label for="Alternate Feeding Methods Score">Alternate Feeding Methods Score</label>
+                          </li>
+                          <li>
+                            <input id="Body Condition Score" type="checkbox">
+                            <label for="Body Condition Score">Body Condition Score</label>
+                          </li>
+                          <li>
+                            <input id="Cyclicity Status" type="checkbox">
+                            <label for="Cyclicity Status">Cyclicity Status</label>
+                          </li>
+                          <li>
+                            <input id="Enrichment Diversity Score" type="checkbox">
+                            <label for="Enrichment Diversity Score">Enrichment Diversity Score</label>
+                          </li>
+                          <li>
+                            <input id="Feeding Diversity Score" type="checkbox">
+                            <label for="Feeding Diversity Score">Feeding Diversity Score</label>
+                          </li>
+                          <li>
+                            <input id="Feeding Schedule Score" type="checkbox">
+                            <label for="Feeding Schedule Score">Feeding Schedule Score</label>
+                          </li>
+                          <li>
+                            <input id="Foot Health Score" type="checkbox">
+                            <label for="Foot Health Score">Foot Health Score</label>
+                          </li>
+                          <li>
+                            <input id="Joint Health" type="checkbox">
+                            <label for="Joint Health">Joint Health Score</label>
+                          </li>
+                          <li>
+                            <input id="Mean Daily Walking Distance (km)" type="checkbox">
+                            <label for="Mean Daily Walking Distance (km)">Mean Daily Walking Distance (km)</label>
+                          </li>
+                           <li>
+                            <input id="Percent Time on Hard Flooring Overall" type="checkbox">
+                            <label for="Percent Time on Hard Flooring Overall">Percent Time on Hard Flooring Overall</label>
+                           </li>
+                        </ol>
+                      </div>
+                    </div>
+                    <div class="filter">
+                      <h3>Management</h3>
+                      <div>
+                        <ol>
+                          <li>
+                            <input id="Alternate Feeding Methods Score" type="checkbox">
+                            <label for="Alternate Feeding Methods Score">Alternate Feeding Methods Score</label>
+                          </li>
+                          <li>
+                            <input id="Body Condition Score" type="checkbox">
+                            <label for="Body Condition Score">Body Condition Score</label>
+                          </li>
+                          <li>
+                            <input id="Cyclicity Status" type="checkbox">
+                            <label for="Cyclicity Status">Cyclicity Status</label>
+                          </li>
+                          <li>
+                            <input id="Enrichment Diversity Score" type="checkbox">
+                            <label for="Enrichment Diversity Score">Enrichment Diversity Score</label>
+                          </li>
+                          <li>
+                            <input id="Feeding Diversity Score" type="checkbox">
+                            <label for="Feeding Diversity Score">Feeding Diversity Score</label>
+                          </li>
+                          <li>
+                            <input id="Feeding Schedule Score" type="checkbox">
+                            <label for="Feeding Schedule Score">Feeding Schedule Score</label>
+                          </li>
+                          <li>
+                            <input id="Foot Health Score" type="checkbox">
+                            <label for="Foot Health Score">Foot Health Score</label>
+                          </li>
+                          <li>
+                            <input id="Joint Health" type="checkbox">
+                            <label for="Joint Health">Joint Health Score</label>
+                          </li>
+                          <li>
+                            <input id="Mean Daily Walking Distance (km)" type="checkbox">
+                            <label for="Mean Daily Walking Distance (km)">Mean Daily Walking Distance (km)</label>
+                          </li>
+                           <li>
+                            <input id="Percent Time on Hard Flooring Overall" type="checkbox">
+                            <label for="Percent Time on Hard Flooring Overall">Percent Time on Hard Flooring Overall</label>
+                           </li>
+                        </ol>
+                      </div>
+                    </div>
+                    <div class="filter">
+                      <h3>Life History</h3>
                       <div>
                         <ol>
                           <li>
@@ -133,9 +323,10 @@
               </li>
             </ul>
         </div>
-        <div class="control-menu">
-            <h1>Filters</h1>
-                <div class="search-tools">
+        </div>
+        <div class="control-menu expander">
+            <h1><a href="javascript:void(0) id="js-expander-trigger" class="expander-trigger expander-hidden">Filters</a></h1>
+                <div id="js-expander-content" class="search-tools expander-content">
                   <div class="filter">
                       <h3>Animals</h3>
                       <div>
@@ -204,7 +395,7 @@
     </div>-->
     <footer class="footer" role="contentinfo">
         <div class="footer-logo">
-            <img src="images/aware_logo_white.png" alt="Logo image">
+            <img src="images/aware_logo.png" alt="Logo image">
         </div>
         <div class="footer-secondary-links">
             <ul>
