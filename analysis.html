@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <script src="js/jquery-2.1.1.min.js"></script>
 <script src="js/ui/navigation.js"></script>
-<script src="js/ui/dropdown.js"></script>
+<script src="js/ui/search_tools.js"></script>
 <script src="js/ui/tabs.js"></script>
 </head>
 <body>
@@ -19,8 +19,10 @@
             <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
             <nav role="navigation">
                 <ul id="js-navigation-menu" class="navigation-menu show">
-                    <li class="nav-item active-menu-item"><a href="analysis.html"><i class="fa fa-area-chart"></i> Analysis</a></li>
-                    <li class="nav-item"><a href="tools.html"><i class="fa fa-pencil-square-o"></i> Tools</a></li>
+                    <li class="nav-item active-nav-item"><a href="analysis.html"><i class="fa fa-area-chart"></i> Analysis</a>
+                    </li>
+                    <li class="nav-item"><a href="tools.html"><i class="fa fa-pencil-square-o"></i> Tools</a>
+                    </li>
                     <li class="nav-item"><a href="dashboard.html"><i class="fa fa-dashboard"></i> Metrics</a></li>
                     <li class="nav-item"><a href="profile.html"><i class="fa fa-leaf"></i> Zoo Profile</a></li>
                 </ul>
@@ -30,13 +32,17 @@
                 <ul class="navigation-menu-show">
                     <li class="nav-item more"><a href="javascript:void(0)"><i class="fa fa-user"></i> Douglas Meehan</a>
                         <ul class="submenu">
-                            <li><a href="#">Profile</a></li>
-                            <li><a href="javascript:void(0)">Settings</a></li>
-                            <li class="more"><a href="javascript:void(0)">Switch User</a>
+                            <li class="more"><a href="javascript:void(0)">Admin</a>
                                 <ul class="submenu">
-                                    <li><a href="javascript:void(0)">John Smith</a></li>
-                                    <li><a href="javascript:void(0)">Jane Doe</a></li>
+                                  <li><a href="#">Research</a></li>
+                                  <li><a href="#">Setup</a></li>
+                                  <li><a href="#">Surveys</a></li>
+                                  <li><a href="#">Types</a></li>
+                                  <li><a href="#">Zoos</a></li>
                                 </ul>
+                            </li>
+                            <li><a href="javascript:void(0)">Manage Accounts</a></li>
+                            <li><a href="javascript:void(0)">Switch Accounts</a>
                             </li>
                             <li><a href="index.html">Log Off</a></li>
                         </ul>
@@ -45,53 +51,153 @@
             </div>
     </header>
     <section class="container">
-        <div class="measures-menu">
-            <ul class="accordion-tabs">
-              <li class="tab-header-and-content">
-                <a href="javascript:void(0)" class="is-active tab-link">Population</a>
+      <nav class="chart-controls">
+        <div class="control-menu">
+          <h1>Measures</h1>
+          <ul class="accordion-tabs-minimal">
+            <li class="tab-header-and-content">
+              <a href="#" class="tab-link is-active">Population</a>
                 <div class="tab-content">
-                  <ul>
-                   </li><input type="checkbox">Cyclicity Status </li>
-                  </ul>
+                  <div class="search-tools">
+                    <div class="filter">
+                      <h3>Outcomes</h3>
+                      <div>
+                        <ol>
+                          <li>
+                            <input id="Alternate Feeding Methods Score" type="checkbox">
+                            <label for="Alternate Feeding Methods Score">Alternate Feeding Methods Score</label>
+                          </li>
+                          <li>
+                            <input id="Body Condition Score" type="checkbox">
+                            <label for="Body Condition Score">Body Condition Score</label>
+                          </li>
+                          <li>
+                            <input id="Cyclicity Status" type="checkbox">
+                            <label for="Cyclicity Status">Cyclicity Status</label>
+                          </li>
+                          <li>
+                            <input id="Enrichment Diversity Score" type="checkbox">
+                            <label for="Enrichment Diversity Score">Enrichment Diversity Score</label>
+                          </li>
+                          <li>
+                            <input id="Feeding Diversity Score" type="checkbox">
+                            <label for="Feeding Diversity Score">Feeding Diversity Score</label>
+                          </li>
+                          <li>
+                            <input id="Feeding Schedule Score" type="checkbox">
+                            <label for="Feeding Schedule Score">Feeding Schedule Score</label>
+                          </li>
+                          <li>
+                            <input id="Foot Health Score" type="checkbox">
+                            <label for="Foot Health Score">Foot Health Score</label>
+                          </li>
+                          <li>
+                            <input id="Joint Health" type="checkbox">
+                            <label for="Joint Health">Joint Health Score</label>
+                          </li>
+                          <li>
+                            <input id="Mean Daily Walking Distance (km)" type="checkbox">
+                            <label for="Mean Daily Walking Distance (km)">Mean Daily Walking Distance (km)</label>
+                          </li>
+                           <li>
+                            <input id="Percent Time on Hard Flooring Overall" type="checkbox">
+                            <label for="Percent Time on Hard Flooring Overall">Percent Time on Hard Flooring Overall</label>
+                           </li>
+                        </ol>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </li>
               <li class="tab-header-and-content">
-                <a href="javascript:void(0)" class="tab-link">Time</a>
+              <a href="#" class="tab-link">Time</a>
                 <div class="tab-content">
-                  <ul>
-                   </li><input type="checkbox">Cyclicity Status </li>
-                  </ul>
+                  <div class="search-tools">
+                    <div class="filter">
+                      <h3>Outcomes</h3>
+                      <div>
+                        <ol>
+                          <li>
+                            <input id="Time Measure 1" type="checkbox">
+                            <label for="Time Measure 2">Time Measure 1</label>
+                          </li>
+                          <li>
+                            <input id="Time Measure 2" type="checkbox">
+                            <label for="Time Measure 2 ">Time Measure 2</label>
+                          </li>
+                        </ol>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </li>
             </ul>
-
         </div>
-        <div class="navigation">
-            <div class="dropdown">
-                <div class="dropdown-container">
-                    <p class="dropdown-description">Measure Type</p>
-                    <p class="dropdown-button">Click to Select</p>
-                    <ul class="dropdown-menu">
-                      <li>Time</li>
-                      <li>Population</li>
-                    </ul>
-                </div>
-                <div class="multi-select">
-                    <select id="example-getting-started" multiple="multiple">
-                        <option value="cheese">Cheese</option>
-                        <option value="tomatoes">Tomatoes</option>
-                        <option value="mozarella">Mozzarella</option>
-                        <option value="mushrooms">Mushrooms</option>
-                        <option value="pepperoni">Pepperoni</option>
-                        <option value="onions">Onions</option>
-                    </select>
+        <div class="control-menu">
+            <h1>Filters</h1>
+                <div class="search-tools">
+                  <div class="filter">
+                      <h3>Animals</h3>
+                      <div>
+                        <ol>
+                          <li>
+                            <input id="Billy" type="checkbox">
+                            <label for="Billy">Billy</label>
+                          </li>
+                          <li>
+                            <input id="JoJo" type="checkbox">
+                            <label for="JoJo">JoJo</label>
+                          </li>
+                        </ol>
+                      </div>
+                    </div>
+                  <div class="filter">
+                    <h3>Sex</h3>
+                    <div>
+                      <ol>
+                        <li>
+                          <input id="Male" type="checkbox">
+                          <label for="Male">Male</label>
+                        </li>
+                        <li>
+                          <input id="Female" type="checkbox">
+                          <label for="Female">Female</label>
+                        </li>
+                      </ol>
+                    </div>
+                  </div>
+                  <div class="filter">
+                      <h3>Species</h3>
+                      <div>
+                        <ol>
+                          <li>
+                            <input id="African" type="checkbox">
+                            <label for="African">African</label>
+                          </li>
+                          <li>
+                            <input id="Asian" type="checkbox">
+                            <label for="Asian">Asian</label>
+                          </li>
+                        </ol>
+                      </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="chart"><i class="fa fa-5x fa-area-chart"></i></div>
-        <div class="filter"></div>
-             
-               
+            <div class="trigger">
+                    <button>Update</button>
+                  </div>
+          </nav>
+            <div class="charts">
+                <div class="chart-group">
+                  <div class="flex-boxes">
+                     <a href="analysis.html" class="flex-box">
+                      <i class="fa fa-5x fa-area-chart"></i>
+                        <h1 class="flex-title">Data Analysis</h1>
+                        <p>Choose the measures to plot. Your charts will appear here.</p>
+                      </a>
+                  </div>
+                </div>
+            </div>
     </section>
     <!--<div class="wrapper-for-content-outside-of-footer">
     Uncomment this whole section for a sticky footer. The content of the page should be inside of this .wrapper-for-content-outside-of-footer

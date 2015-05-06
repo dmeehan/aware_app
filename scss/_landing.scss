@@ -3,7 +3,7 @@
 	  $side-image-background-bottom: $tan;
 	  $side-image-border: 1px solid darken(transparentize($side-image-background-bottom, .8), 30);
 	  @include outer-container;
-	  background: lighten($tan, 25);
+	  background: lighten($light-gray, 10%);
 
 	  @include media($large-screen) {
 	    @include row(table);

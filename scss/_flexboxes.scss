@@ -11,7 +11,7 @@
   $flex-box-width: 18em;
   $flex-box-color: transparentize($base-font-color, 0.3);
 
-  margin: $base-spacing 0;
+  //margin: $base-spacing 0;
 
     @include clearfix;
     @include display(flex);

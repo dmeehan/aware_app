@@ -10,6 +10,7 @@
 @import "flexboxes";
 @import "dropdown";
 @import "tabs";
+@import "_search_tools.scss";
 
 body {
   margin: 0;
@@ -18,6 +19,7 @@ body {
 
 .container {
   @include outer-container();
+  padding: $base-spacing 0;
 }
 
 
@@ -83,8 +85,30 @@ body.login {
 
 /****** ANALYSIS PAGE *****/
 
+.chart-controls {
+  @include span-columns(3.5);
+  height: 100%;
+  
+
+  > div.control-menu {
+    //padding: $base-spacing;
+    //border: $base-border;
+    margin-bottom: $base-spacing;
+  }
+}
+
 .measures-menu {
-  @include span-columns(5);
+  
+}
+
+.charts {
+  @include span-columns(8.5);
+}
+
+.chart-group {
+  padding: $base-spacing;
+  background: lighten($light-gray, 10%);
+  border-radius: $base-border-radius;
 }
 
 

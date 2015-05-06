@@ -310,7 +310,7 @@ html {
       background-color: #EE3C23; }
 
 header.navigation {
-  background-color: #272f34;
+  background-color: #323c43;
   min-height: 60px;
   width: 100%;
   z-index: 999; }
@@ -384,7 +384,7 @@ header.navigation {
         margin: 0;
         padding: 0; } }
   header.navigation ul li.nav-item {
-    background: #272f34;
+    background: #323c43;
     display: block;
     line-height: 60px;
     overflow: hidden;
@@ -482,13 +482,13 @@ header.navigation {
             border-bottom-right-radius: 3px;
             padding-bottom: 0.7em; } }
       header.navigation ul.submenu li a {
-        background-color: #21272b;
+        background-color: #2c343a;
         display: inline-block;
         text-align: right;
         width: 100%; }
         @media screen and (min-width: 53.75em) {
           header.navigation ul.submenu li a {
-            background-color: #272f34;
+            background-color: #323c43;
             padding-left: 1em;
             text-align: left;
             width: 12em; } }
@@ -561,7 +561,7 @@ header.navigation {
   max-width: 68em;
   margin-left: auto;
   margin-right: auto;
-  background: #f8f7f3; }
+  background: #f7f7f7; }
   .landing-info::after {
     clear: both;
     content: "";
@@ -663,7 +663,6 @@ header.navigation {
       opacity: 0.5; }
 
 .flex-boxes {
-  margin: 1.5em 0;
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -917,6 +916,189 @@ header.navigation {
         border: 1px solid #DDD;
         float: left; } }
 
+.accordion-tabs-minimal {
+  line-height: 1.5;
+  padding: 0; }
+  .accordion-tabs-minimal::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .accordion-tabs-minimal li.tab-header-and-content {
+    list-style: none; }
+    @media screen and (min-width: 40em) {
+      .accordion-tabs-minimal li.tab-header-and-content {
+        display: inline; } }
+  .accordion-tabs-minimal a.tab-link {
+    background-color: #fff;
+    border-top: 1px solid #DDD;
+    color: #333;
+    display: block;
+    font-weight: 400;
+    padding: 0.375em 0.75em;
+    text-decoration: none;
+    border-radius: 3px; }
+    @media screen and (min-width: 40em) {
+      .accordion-tabs-minimal a.tab-link {
+        display: inline-block;
+        border-top: 0; } }
+    .accordion-tabs-minimal a.tab-link:focus {
+      outline: none; }
+    .accordion-tabs-minimal a.tab-link.is-active {
+      border-bottom: 0; }
+      @media screen and (min-width: 40em) {
+        .accordion-tabs-minimal a.tab-link.is-active {
+          border: 1px solid #DDD; } }
+  .accordion-tabs-minimal .tab-content {
+    display: none;
+    width: 100%; }
+    @media screen and (min-width: 40em) {
+      .accordion-tabs-minimal .tab-content {
+        float: left; } }
+
+.search-tools::after {
+  clear: both;
+  content: "";
+  display: table; }
+.search-tools h3 {
+  font-size: 0.8em;
+  font-weight: normal;
+  color: #333;
+  margin-bottom: 0.375em;
+  margin-top: 1.5em;
+  text-transform: uppercase; }
+.search-tools ol {
+  margin: 0;
+  padding: 0; }
+.search-tools li {
+  font-size: 0.8em;
+  line-height: 1.5em;
+  list-style: none; }
+.search-tools label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.375em; }
+.search-tools .filter {
+  margin-bottom: 1em; }
+  @media screen and (min-width: 53.75em) {
+    .search-tools .filter {
+      margin-bottom: 0; } }
+  .search-tools .filter > div {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: border-color;
+    -moz-transition: border-color;
+    transition: border-color;
+    background-color: white;
+    border-radius: 3px;
+    border: 1px solid #DDD;
+    font-size: 1em;
+    margin-bottom: 0.75em;
+    padding: 0.5em 0.5em;
+    position: relative;
+    width: 100%; }
+    .search-tools .filter > div:focus, .search-tools .filter > div:hover {
+      border-color: #c4c4c4; }
+    .search-tools .filter > div label {
+      cursor: pointer;
+      font-weight: 400;
+      margin-bottom: 0; }
+  .search-tools .filter ol {
+    margin-top: 1em; }
+    .search-tools .filter ol label {
+      display: inline; }
+  .search-tools .filter button {
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 0 0 white;
+    color: #333333;
+    display: inline-block;
+    font-size: inherit;
+    font-weight: bold;
+    background-color: white;
+    background-image: -webkit-linear-gradient(white, #e3e3e3);
+    background-image: linear-gradient(white, #e3e3e3);
+    padding: 7px 18px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 white;
+    background-clip: padding-box;
+    border: 1px solid #dfd8d8;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 0 0 white;
+    color: #333333;
+    display: inline-block;
+    font-size: inherit;
+    font-weight: bold;
+    background-color: white;
+    background-image: -webkit-linear-gradient(white, #e5e0e0);
+    background-image: linear-gradient(white, #e5e0e0);
+    padding: 7px 18px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 white;
+    background-clip: padding-box;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    bottom: auto;
+    left: auto;
+    font-size: 0.7em; }
+    .search-tools .filter button:hover:not(:disabled) {
+      background-color: #f2f2f2;
+      background-image: -webkit-linear-gradient(#f2f2f2, #dbdbdb);
+      background-image: linear-gradient(#f2f2f2, #dbdbdb);
+      box-shadow: inset 0 1px 0 0 white;
+      cursor: pointer; }
+    .search-tools .filter button:active:not(:disabled), .search-tools .filter button:focus:not(:disabled) {
+      border: 1px solid #dbdbdb;
+      box-shadow: inset 0 0 8px 4px #d4d4d4, inset 0 0 8px 4px #d4d4d4; }
+    .search-tools .filter button:hover:not(:disabled) {
+      background-color: #f2f2f2;
+      background-image: -webkit-linear-gradient(#f2f2f2, #ded8d8);
+      background-image: linear-gradient(#f2f2f2, #ded8d8);
+      box-shadow: inset 0 1px 0 0 white;
+      cursor: pointer; }
+    .search-tools .filter button:active:not(:disabled), .search-tools .filter button:focus:not(:disabled) {
+      border: 1px solid #dfd8d8;
+      box-shadow: inset 0 0 8px 4px #d7d1d1, inset 0 0 8px 4px #d7d1d1; }
+    .search-tools .filter button:disabled {
+      cursor: not-allowed;
+      opacity: 0.5; }
+  .search-tools .filter .hide-options {
+    margin-bottom: 0; }
+    .search-tools .filter .hide-options ol, .search-tools .filter .hide-options button {
+      display: none; }
+.search-tools .summary {
+  width: 80%; }
+.search-tools .trigger {
+  width: 100%; }
+  .search-tools .trigger button {
+    background-color: #5E717D;
+    border-radius: 3px;
+    border: 0;
+    color: white;
+    display: inline-block;
+    font-size: inherit;
+    font-weight: bold;
+    padding: 7px 18px;
+    text-decoration: none;
+    background-clip: padding-box;
+    margin-top: 1em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    width: 100%; }
+    .search-tools .trigger button:hover:not(:disabled) {
+      background-color: #647f90;
+      cursor: pointer; }
+    .search-tools .trigger button:active:not(:disabled), .search-tools .trigger button:focus:not(:disabled) {
+      background-color: #57636b;
+      cursor: pointer; }
+    .search-tools .trigger button:disabled {
+      cursor: not-allowed;
+      opacity: 0.5; }
+    @media screen and (min-width: 53.75em) {
+      .search-tools .trigger button {
+        margin-top: 1.55em; } }
+
 body {
   margin: 0;
   padding: 0; }
@@ -924,7 +1106,8 @@ body {
 .container {
   max-width: 68em;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  padding: 1.5em 0; }
   .container::after {
     clear: both;
     content: "";
@@ -1014,12 +1197,28 @@ body.login {
         padding: 0 0 0 0; }
 
 /****** ANALYSIS PAGE *****/
-.measures-menu {
+.chart-controls {
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 40.29137%; }
-  .measures-menu:last-child {
+  width: 27.49666%;
+  height: 100%; }
+  .chart-controls:last-child {
     margin-right: 0; }
+  .chart-controls > div.control-menu {
+    margin-bottom: 1.5em; }
+
+.charts {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 70.14568%; }
+  .charts:last-child {
+    margin-right: 0; }
+
+.chart-group {
+  padding: 1.5em;
+  background: #f7f7f7;
+  border-radius: 3px; }
 
 /*# sourceMappingURL=Zoo.css.map */
